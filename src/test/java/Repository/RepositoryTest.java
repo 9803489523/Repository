@@ -270,7 +270,6 @@ public class RepositoryTest {
     public void isEmptyAndClearAndGetSize() {
         // test for method isEmpty, Clear and check size for all contracts repository
         fillInRepository();
-        repository.print();
         assertFalse(repository.isEmpty());
         repository.clear();
         assertTrue(repository.isEmpty());
