@@ -2,6 +2,10 @@ package Repository;
 
 import Contracts.Contract;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
 /**
  * class of  Repository
  * with fields <b>contracts</b>, <b>size</b>
@@ -12,15 +16,42 @@ public class Repository<T extends Contract>{
     /**
      generic array field to store, add and delete contracts
      */
-    private T[] contracts;
+    private Contract[] contracts;
     /**
      * size of generic array field
      */
     private int size;
 
+    /**
+     * setter of contracts
+     * @param contracts array
+     */
+    public void setContracts(T[] contracts) {
+        this.contracts = contracts;
+    }
+
+    /**
+     * setter of size
+     * @param size of repository
+     */
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    /**
+     * getter of array contracts
+     * @return contracts array
+     */
+    public Contract[] getContracts() {
+        return  contracts;
+    }
+
+    /**
+     * constructor
+     */
     public Repository() {
         size=0;
-        contracts= (T[]) new Contract[10];
+        contracts= new Contract[10];
     }
 
     /**
@@ -89,8 +120,10 @@ public class Repository<T extends Contract>{
         if(index==-1)
             return null;
         else
-            return contracts[index];
+            return (T)contracts[index];
     }
+
+
 
     /**
      * method, which delete all items in repository
@@ -133,5 +166,19 @@ public class Repository<T extends Contract>{
      */
     public int getSize() {
         return size;
+    }
+
+    /**
+     * method to search value in repository by various criteria
+     * @param predicate, criteria for search
+     * @return searches list of result
+     */
+    public List<T> search(Predicate<T> predicate){
+        List<T> result=new ArrayList<>();
+        for(int i=0;i<size;i++){
+            if(predicate.test((T)contracts[i]))
+                result.add((T)contracts[i]);
+        }
+        return result;
     }
 }

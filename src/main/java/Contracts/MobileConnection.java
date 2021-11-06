@@ -24,6 +24,7 @@ public class MobileConnection extends Contract{
      */
     private int internetTraffic;
 
+
     public MobileConnection(int id, int startYear, int startMonth,
                             int startDay, int endYear, int endMonth, int endDay,
                             long numberOfContract, Human owner, int numberOfMinutes,

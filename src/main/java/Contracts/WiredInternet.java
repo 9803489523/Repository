@@ -50,4 +50,5 @@ public class WiredInternet extends Contract{
     public String toString() {
         return String.format("%s\nскорость: %s Мбит/с}\n",super.toString(),connectionSpeed);
     }
+
 }

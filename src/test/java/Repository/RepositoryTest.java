@@ -7,8 +7,12 @@ import Contracts.WiredInternet;
 import PeoplesInformation.Human;
 import PeoplesInformation.Passport;
 import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+
 import static org.junit.Assert.*;
 /**
  * class of testing Repository
@@ -33,8 +37,8 @@ public class RepositoryTest {
             "Летов Игорь Федорович",
             "Крикунов Денис Денисович",
             "Соболев Илья Алексеевич",
-            "Елизаров Михаил Денисович",
-            "Харитонов Алексей Юрьевич",
+            "Елизаров Михаил Юрьевич",
+            "Харитонов Алексей Денисович",
             "Данилов Юрий Максимович",
             "Горбачев Николай Артемович",
             "Новиков Николай Маркович",
@@ -319,11 +323,86 @@ public class RepositoryTest {
             assertEquals(mobileConnectionContracts[i],mobileConnectionRepository.get(i+11));
         }
         assertNull(mobileConnectionRepository.get(30));
-        // get test for mobile wired internet repository
+        // get test for  wired internet contracts repository
         fillInWiredInternet();
         for (int i=0;i<wiredInternetContracts.length;i++){
             assertEquals(wiredInternetContracts[i],wiredInternetRepository.get(i+20));
         }
         assertNull(wiredInternetRepository.get(29));
+    }
+    /**
+     * this test check method {@link Repository#search(Predicate)} for all types of repository
+     * {@link RepositoryTest#repository#digitalTVRepository#wiredInternetRepository#mobileConnectionRepository}
+     */
+    @Test
+    public void search(){
+        // search test for all types of contract
+        fillInRepository();
+        List<Contract> list=new ArrayList<>();
+        list.add(wiredInternetContracts[0]);
+        list.add(wiredInternetContracts[1]);
+        list.add(wiredInternetContracts[2]);
+        list.add(wiredInternetContracts[3]);
+        list.add(wiredInternetContracts[4]);
+        list.add(mobileConnectionContracts[5]);
+        list.add(wiredInternetContracts[5]);
+        list.add(mobileConnectionContracts[6]);
+        list.add(wiredInternetContracts[6]);
+        list.add(mobileConnectionContracts[7]);
+        list.add(wiredInternetContracts[7]);
+        list.add(mobileConnectionContracts[8]);
+        list.add(wiredInternetContracts[8]);
+        assertEquals( list,repository.search(new Predicate<Contract>() {
+            @Override
+            public boolean test(Contract contract) {
+                return contract.getId()>15;
+            }
+        }));
+        list.clear();
+        list.add(digitalTVContracts[2]);
+        list.add(mobileConnectionContracts[2]);
+        list.add(wiredInternetContracts[2]);
+        assertEquals(list,repository.search(new Predicate<Contract>() {
+            @Override
+            public boolean test(Contract contract) {
+                return contract.getOwner().getFio().equals("Елизаров Михаил Юрьевич");
+            }
+        }));
+
+
+        // search test for digital tv contracts
+        fillInDigitalTV();
+        list.clear();
+        list.add(digitalTVContracts[5]);
+        list.add(digitalTVContracts[7]);
+        assertEquals(list,digitalTVRepository.search(new Predicate<DigitalTV>() {
+            @Override
+            public boolean test(DigitalTV digitalTV) {
+                return digitalTV.getEndContract().getYear()<2020&&digitalTV.getOwner().getAge()>20;
+            }
+        }));
+        // search test for mobile connection contracts
+        fillInMobileConnection();
+        list.clear();
+        list.add(mobileConnectionContracts[2]);
+        list.add(mobileConnectionContracts[5]);
+        assertEquals(list,mobileConnectionRepository.search(new Predicate<MobileConnection>() {
+            @Override
+            public boolean test(MobileConnection mobileConnection) {
+                return mobileConnection.getInternetTraffic()>15&&mobileConnection.getNumberOfSMS()>400;
+            }
+        }));
+        // search test for wired internet contracts
+        fillInWiredInternet();
+        list.clear();
+        list.add(wiredInternetContracts[2]);
+        list.add(wiredInternetContracts[7]);
+        assertEquals(list,wiredInternetRepository.search(new Predicate<WiredInternet>() {
+            @Override
+            public boolean test(WiredInternet wiredInternet) {
+                return wiredInternet.getConnectionSpeed()>100;
+            }
+        }));
+
     }
 }

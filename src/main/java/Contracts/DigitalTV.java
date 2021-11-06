@@ -50,4 +50,6 @@ public class DigitalTV extends Contract{
     public String toString() {
         return String.format("%s\nсписок каналов: %s}\n",super.toString(),channels);
     }
+
+
 }
