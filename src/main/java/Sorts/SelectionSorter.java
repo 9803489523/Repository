@@ -11,7 +11,7 @@ import java.util.Comparator;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
-public class SelectionSorter<T extends Contract> implements Isorter<T>{
+public class SelectionSorter<T extends Contract> implements ISorter<T>{
 
     /**
      * this method sorts repository by criteria, transmitted by comparator
@@ -20,16 +20,15 @@ public class SelectionSorter<T extends Contract> implements Isorter<T>{
      */
     @Override
     public void sort(Comparator<T> comparator, Repository<T> repository) {
-        Contract[] contracts= repository.getContracts();
         for(int i=0;i<repository.getSize();i++){
             int minIndex=i;
             for(int j=i;j<repository.getSize();j++){
-                if(comparator.compare((T)contracts[minIndex],(T)contracts[j])>0)
+                if(comparator.compare(repository.getByIndex(minIndex), repository.getByIndex(j))>0)
                     minIndex=j;
             }
-            Contract replace=contracts[i];
-            contracts[i]=contracts[minIndex];
-            contracts[minIndex]=replace;
+            T replace=repository.getByIndex(i);
+            repository.setByIndex(i,repository.getByIndex(minIndex));
+            repository.setByIndex(minIndex,replace);
 
         }
     }

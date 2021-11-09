@@ -11,7 +11,7 @@ import java.util.Comparator;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
-public class BubbleSorter<T extends Contract> implements Isorter<T>{
+public class BubbleSorter<T extends Contract> implements ISorter<T>{
 
     /**
      * this method sorts repository by criteria, transmitted by comparator
@@ -21,14 +21,13 @@ public class BubbleSorter<T extends Contract> implements Isorter<T>{
     @Override
     public void sort(Comparator<T> comparator, Repository<T> repository) {
         boolean flag=true;
-        Contract[] contracts= repository.getContracts();
         while(flag){
             flag=false;
             for(int i=0;i<repository.getSize()-1;i++){
-                if(comparator.compare((T)contracts[i],(T)contracts[i+1])>0) {
-                    Contract replace = contracts[i];
-                    contracts[i]=contracts[i+1];
-                    contracts[i+1]=replace;
+                if(comparator.compare(repository.getByIndex(i),(T)repository.getByIndex(i+1))>0) {
+                    T replace = repository.getByIndex(i);
+                    repository.setByIndex(i, repository.getByIndex(i+1));
+                    repository.setByIndex(i+1,replace);
                     flag=true;
                 }
             }

@@ -11,7 +11,7 @@ import java.util.Comparator;
  * @version 4.0.0
  */
 
-public class ShellSorter<T extends Contract> implements Isorter<T>{
+public class ShellSorter<T extends Contract> implements ISorter<T>{
 
     /**
      * this method sorts repository by criteria, transmitted by comparator
@@ -21,14 +21,13 @@ public class ShellSorter<T extends Contract> implements Isorter<T>{
     @Override
     public void sort(Comparator<T> comparator, Repository<T> repository) {
         int gap = repository.getSize()/2;
-        Contract[] contracts=repository.getContracts();
         while (gap >= 1) {
             for (int right = 0; right < repository.getSize(); right++) {
                 for (int c = right - gap; c >= 0; c -= gap) {
-                    if (comparator.compare( (T)contracts[c],(T)contracts[c + gap])>0) {
-                        Contract replace=contracts[c];
-                        contracts[c]=contracts[c+gap];
-                        contracts[c+gap]=replace;
+                    if (comparator.compare(repository.getByIndex(c), repository.getByIndex(c+gap))>0) {
+                        T replace= repository.getByIndex(c);
+                        repository.setByIndex(c,repository.getByIndex(c+gap));
+                        repository.setByIndex(c+gap,replace);
                     }
                 }
             }

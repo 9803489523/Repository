@@ -11,7 +11,7 @@ import java.util.Comparator;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
-public interface Isorter<T extends Contract> {
+public interface ISorter<T extends Contract> {
      /**
       * this method sort repository by comparator criteria
       * @param comparator is criteria to sort

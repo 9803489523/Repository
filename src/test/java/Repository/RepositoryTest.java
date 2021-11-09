@@ -6,13 +6,13 @@ import Contracts.MobileConnection;
 import Contracts.WiredInternet;
 import PeoplesInformation.Human;
 import PeoplesInformation.Passport;
+import Sorts.SelectionSorter;
+import Sorts.ShellSorter;
 import org.junit.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
-
 import static org.junit.Assert.*;
 /**
  * class of testing Repository
@@ -73,15 +73,15 @@ public class RepositoryTest {
      * @value this field store digital tv contracts in array format
      */
     DigitalTV[] digitalTVContracts={
-            new DigitalTV(1,2019,11,22,2020,11,22,1202120,humans[1],channels),
-            new DigitalTV(2,2020,10,11,2021,3,9,1202121,humans[2],channels),
+            new DigitalTV(6,2019,11,22,2020,11,22,1202120,humans[1],channels),
+            new DigitalTV(5,2020,10,11,2021,3,9,1202121,humans[2],channels),
             new DigitalTV(3,2018,2,19,2020,7,25,1202122,humans[3],channels),
-            new DigitalTV(4,2019,5,10,2020,6,11,1202123,humans[4],channels),
-            new DigitalTV(5,2017,4,2,2018,2,8,1202124,humans[5],channels),
-            new DigitalTV(6,2018,1,18,2019,10,6,1202125,humans[6],channels),
+            new DigitalTV(9,2019,5,10,2020,6,11,1202123,humans[4],channels),
+            new DigitalTV(2,2017,4,2,2018,2,8,1202124,humans[5],channels),
+            new DigitalTV(1,2018,1,18,2019,10,6,1202125,humans[6],channels),
             new DigitalTV(7,2019,3,12,2020,12,7,1202126,humans[7],channels),
             new DigitalTV(8,2017,7,13,2019,1,3,1202127,humans[8],channels),
-            new DigitalTV(9,2019,12,4,2020,4,18,1202128,humans[9],channels),
+            new DigitalTV(4,2019,12,4,2020,4,18,1202128,humans[9],channels),
             new DigitalTV(10,2020,6,6,2021,8,4,1202129,humans[0],channels),
     };
     /**
@@ -102,15 +102,15 @@ public class RepositoryTest {
      * @value this field store wired internet contracts in array format
      */
     WiredInternet[] wiredInternetContracts={
-            new WiredInternet(20,2019,1,22,2020,12,20,9006770,humans[1],75),
-            new WiredInternet(21,2014,2,16,2021,8,2,9006771,humans[2],100),
+            new WiredInternet(25,2019,1,22,2020,12,20,9006770,humans[1],75),
+            new WiredInternet(21,2014,2,16,2021,8,2,9006771,humans[2],125),
             new WiredInternet(22,2012,10,8,2019,4,23,9006772,humans[3],200),
-            new WiredInternet(23,2018,8,27,2020,5,5,9006773,humans[4],50),
-            new WiredInternet(24,2016,7,11,2021,6,1,9006774,humans[5],50),
-            new WiredInternet(25,2015,6,4,2018,9,16,9006775,humans[6],100),
-            new WiredInternet(26,2014,3,5,2017,7,18,9006776,humans[7],75),
+            new WiredInternet(28,2018,8,27,2020,5,5,9006773,humans[4],50),
+            new WiredInternet(24,2016,7,11,2021,6,1,9006774,humans[5],175),
+            new WiredInternet(20,2015,6,4,2018,9,16,9006775,humans[6],100),
+            new WiredInternet(26,2014,3,5,2017,7,18,9006776,humans[7],80),
             new WiredInternet(27,2010,2,23,2015,8,14,9006777,humans[8],150),
-            new WiredInternet(28,2018,9,20,2021,4,3,9006778,humans[9],75)
+            new WiredInternet(23,2018,9,20,2021,4,3,9006778,humans[9],90)
     };
     /**
      * @value this field store all contracts in Repository format
@@ -305,17 +305,20 @@ public class RepositoryTest {
     public void get() {
         // get test for all contracts repository
         fillInRepository();
-        assertEquals(digitalTVContracts[0],repository.get(1));
-        assertEquals(wiredInternetContracts[8],repository.get(28));
-        assertEquals(digitalTVContracts[1],repository.get(2));
+        assertEquals(digitalTVContracts[5],repository.get(1));
+        assertEquals(wiredInternetContracts[3],repository.get(28));
+        assertEquals(digitalTVContracts[4],repository.get(2));
         assertEquals(mobileConnectionContracts[0],repository.get(11));
         assertEquals(wiredInternetContracts[7],repository.get(27));
         assertNull(repository.get(40));
         // get test for digital tv contracts repository
         fillInDigitalTV();
-        for(int i=0;i<digitalTVContracts.length;i++){
-            assertEquals(digitalTVContracts[i],digitalTVRepository.get(i+1));
-        }
+        assertEquals(digitalTVContracts[5],digitalTVRepository.get(1));
+        assertEquals(digitalTVContracts[8],digitalTVRepository.get(4));
+        assertEquals(digitalTVContracts[6],digitalTVRepository.get(7));
+        assertEquals(digitalTVContracts[7],digitalTVRepository.get(8));
+        assertEquals(digitalTVContracts[1],digitalTVRepository.get(5));
+
         assertNull(digitalTVRepository.get(-5));
         // get test for mobile connection contracts repository
         fillInMobileConnection();
@@ -325,9 +328,11 @@ public class RepositoryTest {
         assertNull(mobileConnectionRepository.get(30));
         // get test for  wired internet contracts repository
         fillInWiredInternet();
-        for (int i=0;i<wiredInternetContracts.length;i++){
-            assertEquals(wiredInternetContracts[i],wiredInternetRepository.get(i+20));
-        }
+        assertEquals(wiredInternetContracts[5],wiredInternetRepository.get(20));
+        assertEquals(wiredInternetContracts[0],wiredInternetRepository.get(25));
+        assertEquals(wiredInternetContracts[3],wiredInternetRepository.get(28));
+        assertEquals(wiredInternetContracts[4],wiredInternetRepository.get(24));
+        assertEquals(wiredInternetContracts[2],wiredInternetRepository.get(22));
         assertNull(wiredInternetRepository.get(29));
     }
     /**
@@ -338,7 +343,7 @@ public class RepositoryTest {
     public void search(){
         // search test for all types of contract
         fillInRepository();
-        List<Contract> list=new ArrayList<>();
+        Repository<Contract> list=new Repository<>();
         list.add(wiredInternetContracts[0]);
         list.add(wiredInternetContracts[1]);
         list.add(wiredInternetContracts[2]);
@@ -352,22 +357,12 @@ public class RepositoryTest {
         list.add(wiredInternetContracts[7]);
         list.add(mobileConnectionContracts[8]);
         list.add(wiredInternetContracts[8]);
-        assertEquals( list,repository.search(new Predicate<Contract>() {
-            @Override
-            public boolean test(Contract contract) {
-                return contract.getId()>15;
-            }
-        }));
+        assertEquals( list,repository.search(contract -> contract.getId() > 15));
         list.clear();
         list.add(digitalTVContracts[2]);
         list.add(mobileConnectionContracts[2]);
         list.add(wiredInternetContracts[2]);
-        assertEquals(list,repository.search(new Predicate<Contract>() {
-            @Override
-            public boolean test(Contract contract) {
-                return contract.getOwner().getFio().equals("Елизаров Михаил Юрьевич");
-            }
-        }));
+        assertEquals(list,repository.search(contract -> contract.getOwner().getFio().equals("Елизаров Михаил Юрьевич")));
 
 
         // search test for digital tv contracts
@@ -375,34 +370,194 @@ public class RepositoryTest {
         list.clear();
         list.add(digitalTVContracts[5]);
         list.add(digitalTVContracts[7]);
-        assertEquals(list,digitalTVRepository.search(new Predicate<DigitalTV>() {
-            @Override
-            public boolean test(DigitalTV digitalTV) {
-                return digitalTV.getEndContract().getYear()<2020&&digitalTV.getOwner().getAge()>20;
-            }
-        }));
+        assertEquals(list,digitalTVRepository.search(digitalTV -> digitalTV.getEndContract().getYear()<2020&&digitalTV.getOwner().getAge()>20));
         // search test for mobile connection contracts
         fillInMobileConnection();
         list.clear();
         list.add(mobileConnectionContracts[2]);
         list.add(mobileConnectionContracts[5]);
-        assertEquals(list,mobileConnectionRepository.search(new Predicate<MobileConnection>() {
-            @Override
-            public boolean test(MobileConnection mobileConnection) {
-                return mobileConnection.getInternetTraffic()>15&&mobileConnection.getNumberOfSMS()>400;
-            }
-        }));
+        assertEquals(list,mobileConnectionRepository.search(mobileConnection -> mobileConnection.getInternetTraffic()>15&&mobileConnection.getNumberOfSMS()>400));
         // search test for wired internet contracts
         fillInWiredInternet();
         list.clear();
+        list.add(wiredInternetContracts[1]);
         list.add(wiredInternetContracts[2]);
+        list.add(wiredInternetContracts[4]);
         list.add(wiredInternetContracts[7]);
-        assertEquals(list,wiredInternetRepository.search(new Predicate<WiredInternet>() {
-            @Override
-            public boolean test(WiredInternet wiredInternet) {
-                return wiredInternet.getConnectionSpeed()>100;
+        assertEquals(list,wiredInternetRepository.search(wiredInternet -> wiredInternet.getConnectionSpeed()>100));
+    }
+    /**
+     * this test check method 'sort' with sorters: BubbleSorter, SelectionSorter, ShellSorter
+     */
+    @Test
+    public void sort() {
+        //test of all contract sort
+        //for bubble sort
+        fillInRepository();
+        repository.sort(Comparator.comparingInt(Contract::getId));
+        for(int i=0;i<repository.getSize();i++){
+            assertEquals(i+1,repository.getByIndex(i).getId());
+        }
+        //for Shell's sort
+        fillInRepository();
+        repository.setSorter(new ShellSorter<>());
+        repository.sort(Comparator.comparingInt(Contract::getId));
+        for(int i=0;i<repository.getSize();i++){
+            assertEquals(i+1,repository.getByIndex(i).getId());
+        }
+        //for selection sort
+        fillInRepository();
+        repository.setSorter(new SelectionSorter<>());
+        repository.sort(Comparator.comparingInt(Contract::getId));
+        for(int i=0;i<repository.getSize();i++){
+            assertEquals(i+1,repository.getByIndex(i).getId());
+        }
+        //test of digital TV contract sort
+        //for bubble sort
+        fillInDigitalTV();
+        digitalTVRepository.sort((o1, o2) -> Integer.compare(o2.getOwner().getAge(),o1.getOwner().getAge()));
+        assertEquals(34,digitalTVRepository.getByIndex(0).getOwner().getAge());
+        assertEquals(31,digitalTVRepository.getByIndex(1).getOwner().getAge());
+        assertEquals(26,digitalTVRepository.getByIndex(2).getOwner().getAge());
+        assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
+        assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
+        assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
+        assertEquals(20,digitalTVRepository.getByIndex(6).getOwner().getAge());
+        assertEquals(20,digitalTVRepository.getByIndex(7).getOwner().getAge());
+        assertEquals(19,digitalTVRepository.getByIndex(8).getOwner().getAge());
+        assertEquals(19,digitalTVRepository.getByIndex(9).getOwner().getAge());
+        //for Shell's sort
+        fillInDigitalTV();
+        digitalTVRepository.setSorter(new ShellSorter<>());
+        digitalTVRepository.sort((o1, o2) -> Integer.compare(o2.getOwner().getAge(),o1.getOwner().getAge()));
+        assertEquals(34,digitalTVRepository.getByIndex(0).getOwner().getAge());
+        assertEquals(31,digitalTVRepository.getByIndex(1).getOwner().getAge());
+        assertEquals(26,digitalTVRepository.getByIndex(2).getOwner().getAge());
+        assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
+        assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
+        assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
+        assertEquals(20,digitalTVRepository.getByIndex(6).getOwner().getAge());
+        assertEquals(20,digitalTVRepository.getByIndex(7).getOwner().getAge());
+        assertEquals(19,digitalTVRepository.getByIndex(8).getOwner().getAge());
+        assertEquals(19,digitalTVRepository.getByIndex(9).getOwner().getAge());
+        //for selection sort
+        fillInDigitalTV();
+        digitalTVRepository.setSorter(new SelectionSorter<>());
+        digitalTVRepository.sort((o1, o2) -> Integer.compare(o2.getOwner().getAge(),o1.getOwner().getAge()));
+        assertEquals(34,digitalTVRepository.getByIndex(0).getOwner().getAge());
+        assertEquals(31,digitalTVRepository.getByIndex(1).getOwner().getAge());
+        assertEquals(26,digitalTVRepository.getByIndex(2).getOwner().getAge());
+        assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
+        assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
+        assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
+        assertEquals(20,digitalTVRepository.getByIndex(6).getOwner().getAge());
+        assertEquals(20,digitalTVRepository.getByIndex(7).getOwner().getAge());
+        assertEquals(19,digitalTVRepository.getByIndex(8).getOwner().getAge());
+        assertEquals(19,digitalTVRepository.getByIndex(9).getOwner().getAge());
+        //test of mobile connection contract sort
+        //for bubble sort
+        fillInMobileConnection();
+        mobileConnectionRepository.sort((o1, o2) -> {
+            if(o1.getNumberOfMinutes()==o2.getNumberOfMinutes()) {
+                if (o1.getNumberOfSMS()==o2.getNumberOfSMS())
+                    return Integer.compare(o1.getInternetTraffic(),o2.getInternetTraffic());
+                else
+                    return Integer.compare(o1.getNumberOfSMS(),o2.getNumberOfSMS());
             }
-        }));
-
+            else
+                return Integer.compare(o1.getNumberOfMinutes(),o2.getNumberOfMinutes());
+        });
+        assertEquals(mobileConnectionContracts[0],mobileConnectionRepository.getByIndex(0));
+        assertEquals(mobileConnectionContracts[5],mobileConnectionRepository.getByIndex(1));
+        assertEquals(mobileConnectionContracts[7],mobileConnectionRepository.getByIndex(2));
+        assertEquals(mobileConnectionContracts[1],mobileConnectionRepository.getByIndex(3));
+        assertEquals(mobileConnectionContracts[8],mobileConnectionRepository.getByIndex(4));
+        assertEquals(mobileConnectionContracts[2],mobileConnectionRepository.getByIndex(5));
+        assertEquals(mobileConnectionContracts[3],mobileConnectionRepository.getByIndex(6));
+        assertEquals(mobileConnectionContracts[6],mobileConnectionRepository.getByIndex(7));
+        assertEquals(mobileConnectionContracts[4],mobileConnectionRepository.getByIndex(8));
+        //for Shell's sort
+        fillInMobileConnection();
+        mobileConnectionRepository.setSorter(new ShellSorter<>());
+        mobileConnectionRepository.sort((o1, o2) -> {
+            if(o1.getNumberOfMinutes()==o2.getNumberOfMinutes()) {
+                if (o1.getNumberOfSMS()==o2.getNumberOfSMS())
+                    return Integer.compare(o1.getInternetTraffic(),o2.getInternetTraffic());
+                else
+                    return Integer.compare(o1.getNumberOfSMS(),o2.getNumberOfSMS());
+            }
+            else
+                return Integer.compare(o1.getNumberOfMinutes(),o2.getNumberOfMinutes());
+        });
+        assertEquals(mobileConnectionContracts[0],mobileConnectionRepository.getByIndex(0));
+        assertEquals(mobileConnectionContracts[5],mobileConnectionRepository.getByIndex(1));
+        assertEquals(mobileConnectionContracts[7],mobileConnectionRepository.getByIndex(2));
+        assertEquals(mobileConnectionContracts[1],mobileConnectionRepository.getByIndex(3));
+        assertEquals(mobileConnectionContracts[8],mobileConnectionRepository.getByIndex(4));
+        assertEquals(mobileConnectionContracts[2],mobileConnectionRepository.getByIndex(5));
+        assertEquals(mobileConnectionContracts[3],mobileConnectionRepository.getByIndex(6));
+        assertEquals(mobileConnectionContracts[6],mobileConnectionRepository.getByIndex(7));
+        assertEquals(mobileConnectionContracts[4],mobileConnectionRepository.getByIndex(8));
+        //for selection sort
+        fillInMobileConnection();
+        mobileConnectionRepository.setSorter(new SelectionSorter<>());
+        mobileConnectionRepository.sort((o1, o2) -> {
+            if(o1.getNumberOfMinutes()==o2.getNumberOfMinutes()) {
+                if (o1.getNumberOfSMS()==o2.getNumberOfSMS())
+                    return Integer.compare(o1.getInternetTraffic(),o2.getInternetTraffic());
+                else
+                    return Integer.compare(o1.getNumberOfSMS(),o2.getNumberOfSMS());
+            }
+            else
+                return Integer.compare(o1.getNumberOfMinutes(),o2.getNumberOfMinutes());
+        });
+        assertEquals(mobileConnectionContracts[0],mobileConnectionRepository.getByIndex(0));
+        assertEquals(mobileConnectionContracts[5],mobileConnectionRepository.getByIndex(1));
+        assertEquals(mobileConnectionContracts[7],mobileConnectionRepository.getByIndex(2));
+        assertEquals(mobileConnectionContracts[1],mobileConnectionRepository.getByIndex(3));
+        assertEquals(mobileConnectionContracts[8],mobileConnectionRepository.getByIndex(4));
+        assertEquals(mobileConnectionContracts[2],mobileConnectionRepository.getByIndex(5));
+        assertEquals(mobileConnectionContracts[3],mobileConnectionRepository.getByIndex(6));
+        assertEquals(mobileConnectionContracts[6],mobileConnectionRepository.getByIndex(7));
+        assertEquals(mobileConnectionContracts[4],mobileConnectionRepository.getByIndex(8));
+        //test of wired internet contract sort
+        //for bubble sort
+        fillInWiredInternet();
+        wiredInternetRepository.sort((o1, o2) -> Integer.compare(o2.getConnectionSpeed(),o1.getConnectionSpeed()));
+        assertEquals(22,wiredInternetRepository.getByIndex(0).getId());
+        assertEquals(24,wiredInternetRepository.getByIndex(1).getId());
+        assertEquals(27,wiredInternetRepository.getByIndex(2).getId());
+        assertEquals(21,wiredInternetRepository.getByIndex(3).getId());
+        assertEquals(20,wiredInternetRepository.getByIndex(4).getId());
+        assertEquals(23,wiredInternetRepository.getByIndex(5).getId());
+        assertEquals(26,wiredInternetRepository.getByIndex(6).getId());
+        assertEquals(25,wiredInternetRepository.getByIndex(7).getId());
+        assertEquals(28,wiredInternetRepository.getByIndex(8).getId());
+        //for Shell's sort
+        fillInWiredInternet();
+        wiredInternetRepository.setSorter(new ShellSorter<>());
+        wiredInternetRepository.sort((o1, o2) -> Integer.compare(o2.getConnectionSpeed(),o1.getConnectionSpeed()));
+        assertEquals(22,wiredInternetRepository.getByIndex(0).getId());
+        assertEquals(24,wiredInternetRepository.getByIndex(1).getId());
+        assertEquals(27,wiredInternetRepository.getByIndex(2).getId());
+        assertEquals(21,wiredInternetRepository.getByIndex(3).getId());
+        assertEquals(20,wiredInternetRepository.getByIndex(4).getId());
+        assertEquals(23,wiredInternetRepository.getByIndex(5).getId());
+        assertEquals(26,wiredInternetRepository.getByIndex(6).getId());
+        assertEquals(25,wiredInternetRepository.getByIndex(7).getId());
+        assertEquals(28,wiredInternetRepository.getByIndex(8).getId());
+        //for selection sort
+        fillInWiredInternet();
+        wiredInternetRepository.setSorter(new SelectionSorter<>());
+        wiredInternetRepository.sort((o1, o2) -> Integer.compare(o2.getConnectionSpeed(),o1.getConnectionSpeed()));
+        assertEquals(22,wiredInternetRepository.getByIndex(0).getId());
+        assertEquals(24,wiredInternetRepository.getByIndex(1).getId());
+        assertEquals(27,wiredInternetRepository.getByIndex(2).getId());
+        assertEquals(21,wiredInternetRepository.getByIndex(3).getId());
+        assertEquals(20,wiredInternetRepository.getByIndex(4).getId());
+        assertEquals(23,wiredInternetRepository.getByIndex(5).getId());
+        assertEquals(26,wiredInternetRepository.getByIndex(6).getId());
+        assertEquals(25,wiredInternetRepository.getByIndex(7).getId());
+        assertEquals(28,wiredInternetRepository.getByIndex(8).getId());
     }
 }

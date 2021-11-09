@@ -1,9 +1,9 @@
 package Repository;
 
 import Contracts.Contract;
-
-import java.util.ArrayList;
-import java.util.List;
+import Sorts.BubbleSorter;
+import Sorts.ISorter;
+import java.util.*;
 import java.util.function.Predicate;
 
 /**
@@ -14,7 +14,7 @@ import java.util.function.Predicate;
  */
 public class Repository<T extends Contract>{
     /**
-     generic array field to store, add and delete contracts
+     *generic array field to store, add and delete contracts
      */
     private Contract[] contracts;
     /**
@@ -23,12 +23,9 @@ public class Repository<T extends Contract>{
     private int size;
 
     /**
-     * setter of contracts
-     * @param contracts array
+     * repositories sorter
      */
-    public void setContracts(T[] contracts) {
-        this.contracts = contracts;
-    }
+    private ISorter<T> sorter=new BubbleSorter<>();
 
     /**
      * setter of size
@@ -38,17 +35,14 @@ public class Repository<T extends Contract>{
         this.size = size;
     }
 
-    /**
-     * getter of array contracts
-     * @return contracts array
-     */
-    public Contract[] getContracts() {
-        return  contracts;
+    public ISorter<T> getSorter() {
+        return sorter;
     }
 
-    /**
-     * constructor
-     */
+    public void setSorter(ISorter<T> sorter) {
+        this.sorter = sorter;
+    }
+
     public Repository() {
         size=0;
         contracts= new Contract[10];
@@ -129,7 +123,7 @@ public class Repository<T extends Contract>{
      * method, which delete all items in repository
      */
     public void clear(){
-        contracts= (T[]) new Contract[10];
+        contracts=  new Contract[10];
         size=0;
     }
 
@@ -169,16 +163,62 @@ public class Repository<T extends Contract>{
     }
 
     /**
+     * method to get contract by index from array
+     * @param index of value in array
+     * @return contracts[index]
+     */
+    public T getByIndex(int index){
+        return (T)contracts[index];
+    }
+
+    /**
+     * method, which set value in contracts array by index
+     * @param index - position, which we want to set value in contracts array
+     * @param value - value, which we want to set in contracts array
+     */
+    public void setByIndex(int index, T value){
+        contracts[index]=value;
+    }
+    /**
      * method to search value in repository by various criteria
      * @param predicate, criteria for search
      * @return searches list of result
      */
-    public List<T> search(Predicate<T> predicate){
-        List<T> result=new ArrayList<>();
+    public Repository<T> search(Predicate<T> predicate){
+        Repository<T> result=new Repository<T>();
         for(int i=0;i<size;i++){
             if(predicate.test((T)contracts[i]))
                 result.add((T)contracts[i]);
         }
         return result;
+    }
+
+    /**
+     *equals
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Repository<?> that = (Repository<?>) o;
+        return size == that.size && Arrays.equals(contracts, that.contracts) && sorter.getClass().equals(that.sorter.getClass());
+    }
+
+    /**
+     * hashcode
+     */
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(size, sorter);
+        result = 31 * result + Arrays.hashCode(contracts);
+        return result;
+    }
+
+    /**
+     * method, which sorts repository comparator
+     * @param comparator is criteria to sort repository
+     */
+    public void sort(Comparator<T> comparator){
+        sorter.sort(comparator,this);
     }
 }
