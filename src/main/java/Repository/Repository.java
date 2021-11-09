@@ -35,14 +35,23 @@ public class Repository<T extends Contract>{
         this.size = size;
     }
 
+    /**
+     * getter of field sorter
+     */
     public ISorter<T> getSorter() {
         return sorter;
     }
 
+    /**
+     * setter of field sorter
+     */
     public void setSorter(ISorter<T> sorter) {
         this.sorter = sorter;
     }
 
+    /**
+     * constructor of class Repository
+     */
     public Repository() {
         size=0;
         contracts= new Contract[10];
@@ -116,8 +125,6 @@ public class Repository<T extends Contract>{
         else
             return (T)contracts[index];
     }
-
-
 
     /**
      * method, which delete all items in repository
@@ -215,7 +222,7 @@ public class Repository<T extends Contract>{
     }
 
     /**
-     * method, which sorts repository comparator
+     * method, which sorts repository by comparator
      * @param comparator is criteria to sort repository
      */
     public void sort(Comparator<T> comparator){
