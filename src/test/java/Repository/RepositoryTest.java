@@ -422,7 +422,7 @@ public class RepositoryTest {
         assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
         assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
         assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
-        assertEquals(20,digitalTVRepository.getByIndex(6).getOwner().getAge());
+        assertEquals(21,digitalTVRepository.getByIndex(6).getOwner().getAge());
         assertEquals(20,digitalTVRepository.getByIndex(7).getOwner().getAge());
         assertEquals(19,digitalTVRepository.getByIndex(8).getOwner().getAge());
         assertEquals(19,digitalTVRepository.getByIndex(9).getOwner().getAge());
@@ -436,7 +436,7 @@ public class RepositoryTest {
         assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
         assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
         assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
-        assertEquals(20,digitalTVRepository.getByIndex(6).getOwner().getAge());
+        assertEquals(21,digitalTVRepository.getByIndex(6).getOwner().getAge());
         assertEquals(20,digitalTVRepository.getByIndex(7).getOwner().getAge());
         assertEquals(19,digitalTVRepository.getByIndex(8).getOwner().getAge());
         assertEquals(19,digitalTVRepository.getByIndex(9).getOwner().getAge());
@@ -450,7 +450,7 @@ public class RepositoryTest {
         assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
         assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
         assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
-        assertEquals(20,digitalTVRepository.getByIndex(6).getOwner().getAge());
+        assertEquals(21,digitalTVRepository.getByIndex(6).getOwner().getAge());
         assertEquals(20,digitalTVRepository.getByIndex(7).getOwner().getAge());
         assertEquals(19,digitalTVRepository.getByIndex(8).getOwner().getAge());
         assertEquals(19,digitalTVRepository.getByIndex(9).getOwner().getAge());
