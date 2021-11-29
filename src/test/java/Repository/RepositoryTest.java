@@ -48,11 +48,11 @@ public class RepositoryTest {
      * @value this field store passport data of contract owners
      */
     Passport[] passports={
-            new Passport("2014","146 900"),new Passport("201","200 359"),
-            new Passport("2014","125 127"),new Passport("2014","200 045"),
-            new Passport("2015","325 789"),new Passport("2015","111 007"),
-            new Passport("2015","322 147"),new Passport("2015","411 782"),
-            new Passport("2015","899 417"),new Passport("2015","791 457")
+            new Passport("2014","146 900"),new Passport("2011","200359"),
+            new Passport("2014","125 127"),new Passport("2014","200045"),
+            new Passport("2015","325 789"),new Passport("2015","111007"),
+            new Passport("2015","322 147"),new Passport("2015","411782"),
+            new Passport("2015","899 417"),new Passport("2015","791457")
     };
     /**
      * @value this field store contract owners
