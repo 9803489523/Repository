@@ -16,7 +16,7 @@ import java.util.Locale;
 /**
  * class of  CsvWorker
  * without fields
- * this class need to read information from CSV file and wrote to repository
+ * this class need to read information from CSV file and write to repository
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
@@ -26,14 +26,16 @@ public class CsvWorker{
      * method to read info from CSV file and write this to repository
      * @param csvFile, file for reading info
      * @param repository, repository to write info from file
-     * @param <T>, repositories generic
      */
-    public<T extends Contract> void fromCsvToRepository(File csvFile, Repository<T> repository){
+    public void fromCsvToRepository(File csvFile, Repository<Contract> repository){
+        System.out.println("Список недобавленных контрактов в репозиторий:");
         if(getFileExtension(csvFile).toLowerCase(Locale.ROOT).equals("csv")){
             try(BufferedReader reader=new BufferedReader(new FileReader(csvFile))) {
                 String line;
+                int counter=0;
                 while ((line=reader.readLine())!=null){
                     try{
+                        counter++;
                         String[] contractInfo=line.split(";");
                         int id=Integer.parseInt(contractInfo[0]);
                         String[] parseArray=contractInfo[1].split("\\.");
@@ -62,7 +64,7 @@ public class CsvWorker{
                                         endContract.getYear(), endContract.getMonthValue(), endContract.getDayOfMonth(),
                                         numberOfContract, new Human(id, fio, clientBornDate.getYear(),
                                         clientBornDate.getMonthValue(), clientBornDate.getDayOfMonth(), passport), channels);
-                                repository.add((T) digitalTV);
+                                repository.add(digitalTV);
                             }
                             case "MC" -> {
                                 parseArray = contractInfo[8].split(" ");
@@ -72,7 +74,7 @@ public class CsvWorker{
                                         numberOfContract, new Human(id, fio, clientBornDate.getYear(),
                                         clientBornDate.getMonthValue(), clientBornDate.getDayOfMonth(), passport),
                                         Integer.parseInt(parseArray[0]), Integer.parseInt(parseArray[1]), Integer.parseInt(parseArray[2]));
-                                repository.add((T) mobileConnection);
+                                repository.add(mobileConnection);
                             }
                             case "WI" -> {
                                 int speed = Integer.parseInt(contractInfo[8]);
@@ -81,11 +83,15 @@ public class CsvWorker{
                                         endContract.getYear(), endContract.getMonthValue(), endContract.getDayOfMonth(),
                                         numberOfContract, new Human(id, fio, clientBornDate.getYear(),
                                         clientBornDate.getMonthValue(), clientBornDate.getDayOfMonth(), passport), speed);
-                                repository.add((T) wiredInternet);
+                                repository.add(wiredInternet);
                             }
+                            default -> throw new IOException();
                         }
                     }
-                    catch (Exception e){}
+                    catch (Exception e){
+                        System.out.printf("%s элемент не добавлен в репозиторий\n",counter);
+                        e.printStackTrace();
+                    }
                 }
             }
             catch (IOException e) {
