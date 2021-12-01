@@ -5,7 +5,6 @@ import Contracts.DigitalTV;
 import Contracts.MobileConnection;
 import Contracts.WiredInternet;
 import PeoplesInformation.Human;
-import PeoplesInformation.Passport;
 import Sorts.SelectionSorter;
 import Sorts.ShellSorter;
 import org.junit.Test;
@@ -47,13 +46,9 @@ public class RepositoryTest {
     /**
      * @value this field store passport data of contract owners
      */
-    Passport[] passports={
-            new Passport("2014","146 900"),new Passport("2011","200359"),
-            new Passport("2014","125 127"),new Passport("2014","200045"),
-            new Passport("2015","325 789"),new Passport("2015","111007"),
-            new Passport("2015","322 147"),new Passport("2015","411782"),
-            new Passport("2015","899 417"),new Passport("2015","791457")
-    };
+    String[] passports={"2014 146 900","2011 200359","2014 125 127","2014 200045","2015 325 789","2015 111007",
+                          "2015 322 147", "2015 411782","2015 899 417","2015 791457"};
+
     /**
      * @value this field store contract owners
      */

@@ -19,7 +19,7 @@ public class HumanTest {
         int yearNow=LocalDate.now().getYear();
         int monthNow=LocalDate.now().getMonthValue();
         int dayNow=LocalDate.now().getDayOfMonth();
-        Human human=new Human(1,"Иванов Олег Дмитриевич",yearNow-21,monthNow,dayNow,new Passport("1525","321 568"));
+        Human human=new Human(1,"Иванов Олег Дмитриевич",yearNow-21,monthNow,dayNow,"1525 321 568");
         assertEquals(21,human.ageComputation());
         if(dayNow>1) {
             human.setBornDate(LocalDate.of(yearNow - 22, monthNow, dayNow - 1));

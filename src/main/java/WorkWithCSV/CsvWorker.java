@@ -5,10 +5,11 @@ import Contracts.DigitalTV;
 import Contracts.MobileConnection;
 import Contracts.WiredInternet;
 import PeoplesInformation.Human;
-import PeoplesInformation.Passport;
 import Repository.Repository;
 import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -28,37 +29,27 @@ public class CsvWorker{
      * @param repository, repository to write info from file
      */
     public void fromCsvToRepository(File csvFile, Repository<Contract> repository){
-        System.out.println("Список недобавленных контрактов в репозиторий:");
+        System.out.println("List of not added to repository contracts :");
         if(getFileExtension(csvFile).toLowerCase(Locale.ROOT).equals("csv")){
             try(BufferedReader reader=new BufferedReader(new FileReader(csvFile))) {
                 String line;
                 int counter=0;
                 while ((line=reader.readLine())!=null){
                     try{
+                        String[] parseArray;
                         counter++;
                         String[] contractInfo=line.split(";");
                         int id=Integer.parseInt(contractInfo[0]);
-                        String[] parseArray=contractInfo[1].split("\\.");
-                        LocalDate startContract=LocalDate.of(Integer.parseInt(parseArray[0]),
-                                                             Integer.parseInt(parseArray[1]),
-                                                             Integer.parseInt(parseArray[2]));
-                        parseArray=contractInfo[2].split("\\.");
-                        LocalDate endContract=LocalDate.of(Integer.parseInt(parseArray[0]),
-                                                           Integer.parseInt(parseArray[1]),
-                                                           Integer.parseInt(parseArray[2]));
+                        LocalDate startContract= LocalDate.parse(contractInfo[1],DateTimeFormatter.ofPattern("yyyy.M.d"));
+                        LocalDate endContract=LocalDate.parse(contractInfo[2],DateTimeFormatter.ofPattern("yyyy.M.d"));
                         int numberOfContract=Integer.parseInt(contractInfo[3]);
                         String fio=contractInfo[4];
-                        parseArray=contractInfo[5].split("\\.");
-                        LocalDate clientBornDate=LocalDate.of(Integer.parseInt(parseArray[0]),
-                                                              Integer.parseInt(parseArray[1]),
-                                                              Integer.parseInt(parseArray[2]));
-                        parseArray=contractInfo[6].split(" ");
-                        Passport passport =new Passport(parseArray[0],parseArray[1]);
+                        LocalDate clientBornDate=LocalDate.parse(contractInfo[5],DateTimeFormatter.ofPattern("yyyy.M.d"));
+                        String passport =contractInfo[6];
                         String type=contractInfo[7].toUpperCase(Locale.ROOT);
                         switch (type) {
                             case "DTV" -> {
-                                parseArray = contractInfo[8].split(",");
-                                List<String> channels = Arrays.stream(parseArray).toList();
+                                List<String> channels = Arrays.stream(contractInfo[8].split(",")).toList();
                                 DigitalTV digitalTV = new DigitalTV(id,
                                         startContract.getYear(), startContract.getMonthValue(), startContract.getDayOfMonth(),
                                         endContract.getYear(), endContract.getMonthValue(), endContract.getDayOfMonth(),
@@ -68,15 +59,21 @@ public class CsvWorker{
                             }
                             case "MC" -> {
                                 parseArray = contractInfo[8].split(" ");
-                                MobileConnection mobileConnection = new MobileConnection(id,
-                                        startContract.getYear(), startContract.getMonthValue(), startContract.getDayOfMonth(),
-                                        endContract.getYear(), endContract.getMonthValue(), endContract.getDayOfMonth(),
-                                        numberOfContract, new Human(id, fio, clientBornDate.getYear(),
-                                        clientBornDate.getMonthValue(), clientBornDate.getDayOfMonth(), passport),
-                                        Integer.parseInt(parseArray[0]), Integer.parseInt(parseArray[1]), Integer.parseInt(parseArray[2]));
-                                repository.add(mobileConnection);
+                                if(parseArray.length==3)
+                                {
+                                    MobileConnection mobileConnection = new MobileConnection(id,
+                                            startContract.getYear(), startContract.getMonthValue(), startContract.getDayOfMonth(),
+                                            endContract.getYear(), endContract.getMonthValue(), endContract.getDayOfMonth(),
+                                            numberOfContract, new Human(id, fio, clientBornDate.getYear(),
+                                            clientBornDate.getMonthValue(), clientBornDate.getDayOfMonth(), passport),
+                                            Integer.parseInt(parseArray[0]), Integer.parseInt(parseArray[1]), Integer.parseInt(parseArray[2]));
+                                    repository.add(mobileConnection);
+                                }
+                                else
+                                    throw new IOException();
                             }
-                            case "WI" -> {
+                            case "WI" ->
+                            {
                                 int speed = Integer.parseInt(contractInfo[8]);
                                 WiredInternet wiredInternet = new WiredInternet(id,
                                         startContract.getYear(), startContract.getMonthValue(), startContract.getDayOfMonth(),
@@ -88,8 +85,8 @@ public class CsvWorker{
                             default -> throw new IOException();
                         }
                     }
-                    catch (Exception e){
-                        System.out.printf("%s элемент не добавлен в репозиторий\n",counter);
+                    catch (NumberFormatException|IOException| DateTimeParseException e){
+                        System.out.printf("%s value not added to repository, returned with exception \n",counter);
                         e.printStackTrace();
                     }
                 }

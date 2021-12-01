@@ -26,7 +26,7 @@ public class Human {
     /**
      * field of human passport
      */
-    private Passport passport;
+    private String passport;
     /**
      * field of human age
      * this field count in method {@link Human#ageComputation()}
@@ -34,7 +34,7 @@ public class Human {
     private int age;
 
     public Human(int id, String fio, int bornYear,int bornMonth,
-                 int bornDay, Passport passport)
+                 int bornDay, String passport)
     {
         this.id = id;
         this.fio = fio;
@@ -94,11 +94,11 @@ public class Human {
         this.bornDate = bornDate;
     }
 
-    public Passport getPassport() {
+    public String getPassport() {
         return passport;
     }
 
-    public void setPassport(Passport passport) {
+    public void setPassport(String passport) {
         this.passport = passport;
     }
 
