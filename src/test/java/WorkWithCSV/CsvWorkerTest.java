@@ -113,7 +113,7 @@ public class CsvWorkerTest {
     public void fromCsvToRepository() {
         fillIN();
         CsvWorker csvWorker=new CsvWorker();
-        File contracts=new File("TestForAllContract.csv");
+        File contracts=new File("TestForCsvWorker.csv");
         Repository<Contract> contractRepository1=new Repository<>();
         csvWorker.fromCsvToRepository(contracts,contractRepository1);
         for(int i=0;i< contractRepository.getSize();i++){
