@@ -7,16 +7,14 @@ import Contracts.WiredInternet;
 import PeoplesInformation.Human;
 import Repository.Repository;
 import org.junit.Test;
+
 import java.io.File;
 import java.util.ArrayList;
+
 import static org.junit.Assert.*;
-/**
- * class of  CsvWorkerTest
- * this class need to test all methods of class CsvWorker
- * @author Aleksandr Nozdryuhin
- * @version 4.0.0
- */
+
 public class CsvWorkerTest {
+
     /**
      * repository, which store all contract
      */
@@ -48,10 +46,6 @@ public class CsvWorkerTest {
                 2016,10,8,2114447,
                 new Human(3,"Смирнов Сергей Петрович",1979,5,16,
                         "2002 125789"),40));
-        contractRepository.add(new WiredInternet(5,2017,11,9,
-                2021,10,8,2114410,
-                new Human(5,"Храмов Сергей Петрович",1979,5,16,
-                        "2005 125789"),40));
         contractRepository.add(new DigitalTV(6,2007,11,9,
                 2011,10,8,2114411,
                 new Human(6,"Махин Сергей Петрович",1979,5,16,
@@ -71,12 +65,12 @@ public class CsvWorkerTest {
         contractRepository.add(new DigitalTV(3,2014,11,9,
                 2016,10,8,2114413,
                 new Human(3,"Иванов Сергей Петрович",1979,5,16,
-                        "2009 125789"),firstPacket));
+                        "20 09 125 789"),firstPacket));
         contractRepository.add(new DigitalTV(5,2014,11,9,
                 2016,10,8,2114413,
                 new Human(5,"Ечин Сергей Петрович",1979,5,16,
-                        "2009 125789"),firstPacket));
-       contractRepository.add(new MobileConnection(7,2019,11,9,
+                        "20 09 125 789"),firstPacket));
+        contractRepository.add(new MobileConnection(7,2019,11,9,
                 2020,10,8,2114412,
                 new Human(7,"Ильин Сергей Петрович",1979,5,16,
                         "2008 125789"),40,45,12));
@@ -84,26 +78,6 @@ public class CsvWorkerTest {
                 2020,10,8,2114412,
                 new Human(1,"Жданов Сергей Петрович",1979,5,16,
                         "2008 125781"),20,48,15));
-        contractRepository.add(new MobileConnection(4,2019,11,9,
-                2020,10,8,2114412,
-                new Human(4,"Попов Сергей Петрович",1979,5,16,
-                        "2008 125788"),8,54,21));
-        contractRepository.add(new MobileConnection(6,2019,11,9,
-                2020,10,8,2114412,
-                new Human(6,"Зотов Сергей Петрович",1979,5,16,
-                        "2008 125783"),36,100,51));
-        contractRepository.add(new WiredInternet(3,2015,11,9,
-                2016,10,8,2114447,
-                new Human(3,"Смирнов Сергей Петрович",1979,5,16,
-                        "2002 125789"),45));
-        contractRepository.add(new WiredInternet(5,2015,11,9,
-                2016,10,8,2114447,
-                new Human(5,"Смирнов Сергей Петрович",1979,5,16,
-                        "2002 125789"),70));
-        contractRepository.add(new WiredInternet(4,2015,11,9,
-                2016,10,8,2114447,
-                new Human(4,"Смирнов Сергей Петрович",1979,5,16,
-                        "2002 125789"),29));
     }
 
     /**
@@ -113,7 +87,7 @@ public class CsvWorkerTest {
     public void fromCsvToRepository() {
         fillIN();
         CsvWorker csvWorker=new CsvWorker();
-        File contracts=new File("TestForCsvWorker.csv");
+        File contracts=new File("TestForCsvWorkerWithValidator.csv");
         Repository<Contract> contractRepository1=new Repository<>();
         csvWorker.fromCsvToRepository(contracts,contractRepository1);
         for(int i=0;i< contractRepository.getSize();i++){

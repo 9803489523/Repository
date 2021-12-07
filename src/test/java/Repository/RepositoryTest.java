@@ -413,7 +413,7 @@ public class RepositoryTest {
         digitalTVRepository.sort((o1, o2) -> Integer.compare(o2.getOwner().getAge(),o1.getOwner().getAge()));
         assertEquals(34,digitalTVRepository.getByIndex(0).getOwner().getAge());
         assertEquals(31,digitalTVRepository.getByIndex(1).getOwner().getAge());
-        assertEquals(26,digitalTVRepository.getByIndex(2).getOwner().getAge());
+        assertEquals(27,digitalTVRepository.getByIndex(2).getOwner().getAge());
         assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
         assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
         assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
@@ -427,7 +427,7 @@ public class RepositoryTest {
         digitalTVRepository.sort((o1, o2) -> Integer.compare(o2.getOwner().getAge(),o1.getOwner().getAge()));
         assertEquals(34,digitalTVRepository.getByIndex(0).getOwner().getAge());
         assertEquals(31,digitalTVRepository.getByIndex(1).getOwner().getAge());
-        assertEquals(26,digitalTVRepository.getByIndex(2).getOwner().getAge());
+        assertEquals(27,digitalTVRepository.getByIndex(2).getOwner().getAge());
         assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
         assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
         assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
@@ -441,7 +441,7 @@ public class RepositoryTest {
         digitalTVRepository.sort((o1, o2) -> Integer.compare(o2.getOwner().getAge(),o1.getOwner().getAge()));
         assertEquals(34,digitalTVRepository.getByIndex(0).getOwner().getAge());
         assertEquals(31,digitalTVRepository.getByIndex(1).getOwner().getAge());
-        assertEquals(26,digitalTVRepository.getByIndex(2).getOwner().getAge());
+        assertEquals(27,digitalTVRepository.getByIndex(2).getOwner().getAge());
         assertEquals(24,digitalTVRepository.getByIndex(3).getOwner().getAge());
         assertEquals(22,digitalTVRepository.getByIndex(4).getOwner().getAge());
         assertEquals(21,digitalTVRepository.getByIndex(5).getOwner().getAge());
