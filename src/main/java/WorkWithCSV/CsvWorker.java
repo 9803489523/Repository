@@ -6,9 +6,9 @@ import Contracts.MobileConnection;
 import Contracts.WiredInternet;
 import PeoplesInformation.Human;
 import Repository.Repository;
-import TestReflection.Autoinjectable;
-import TestReflection.CollectionField;
-import TestReflection.WithDefaultConstructor;
+import ReflectionResources.Autoinjectable;
+import ReflectionResources.CollectionField;
+import ReflectionResources.WithDefaultConstructor;
 
 import java.io.BufferedReader;
 import java.io.File;

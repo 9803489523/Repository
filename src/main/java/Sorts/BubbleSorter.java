@@ -2,7 +2,7 @@ package Sorts;
 
 import Contracts.Contract;
 import Repository.Repository;
-import TestReflection.WithDefaultConstructor;
+import ReflectionResources.WithDefaultConstructor;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package TestReflection;
+package ReflectionResources;
 
 
 import org.reflections.Reflections;

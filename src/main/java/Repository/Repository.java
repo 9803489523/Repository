@@ -3,8 +3,8 @@ package Repository;
 import Contracts.Contract;
 import Sorts.BubbleSorter;
 import Sorts.ISorter;
-import TestReflection.Autoinjectable;
-import TestReflection.WithDefaultConstructor;
+import ReflectionResources.Autoinjectable;
+import ReflectionResources.WithDefaultConstructor;
 
 import java.util.*;
 import java.util.function.Predicate;

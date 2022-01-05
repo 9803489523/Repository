@@ -1,7 +1,7 @@
 package WorkWithCSV;
 
 import Contracts.Contract;
-import TestReflection.WithDefaultConstructor;
+import ReflectionResources.WithDefaultConstructor;
 
 @WithDefaultConstructor
 public class IdChecker implements IValidator{
