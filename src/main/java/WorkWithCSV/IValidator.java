@@ -8,6 +8,7 @@ import Contracts.Contract;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+@FunctionalInterface
 public interface IValidator {
     /**
      * method, which check contract on validation

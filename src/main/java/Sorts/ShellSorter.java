@@ -1,6 +1,8 @@
 package Sorts;
 import Contracts.Contract;
 import Repository.Repository;
+import TestReflection.WithDefaultConstructor;
+
 import java.util.Comparator;
 
 /**
@@ -10,7 +12,7 @@ import java.util.Comparator;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
-
+@WithDefaultConstructor
 public class ShellSorter<T extends Contract> implements ISorter<T>{
 
     /**

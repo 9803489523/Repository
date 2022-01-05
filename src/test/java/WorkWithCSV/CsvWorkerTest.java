@@ -12,7 +12,11 @@ import java.io.File;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
-
+/**
+ * class of testing CswWorker
+ * @author Aleksandr Nozdryuhin
+ * @version 4.12
+ */
 public class CsvWorkerTest {
 
     /**

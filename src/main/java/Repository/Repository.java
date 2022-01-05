@@ -3,6 +3,9 @@ package Repository;
 import Contracts.Contract;
 import Sorts.BubbleSorter;
 import Sorts.ISorter;
+import TestReflection.Autoinjectable;
+import TestReflection.WithDefaultConstructor;
+
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -12,6 +15,7 @@ import java.util.function.Predicate;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+@WithDefaultConstructor
 public class Repository<T extends Contract>{
     /**
      *generic array field to store, add and delete contracts
@@ -25,6 +29,7 @@ public class Repository<T extends Contract>{
     /**
      * repositories sorter
      */
+    @Autoinjectable(defaultField = "ShellSorter")
     private ISorter<T> sorter=new BubbleSorter<>();
 
     /**
@@ -55,6 +60,16 @@ public class Repository<T extends Contract>{
     public Repository() {
         size=0;
         contracts= new Contract[10];
+    }
+
+    /**
+     * constructor with parameters
+     * @param sorter, sorter of repository
+     */
+    public Repository(ISorter<T> sorter) {
+        size=0;
+        contracts= new Contract[10];
+        this.sorter = sorter;
     }
 
     /**

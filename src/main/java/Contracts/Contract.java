@@ -10,6 +10,7 @@ import java.util.Objects;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+
 public abstract class  Contract {
     /**
      * field of id contract

@@ -6,6 +6,10 @@ import Contracts.MobileConnection;
 import Contracts.WiredInternet;
 import PeoplesInformation.Human;
 import Repository.Repository;
+import TestReflection.Autoinjectable;
+import TestReflection.CollectionField;
+import TestReflection.WithDefaultConstructor;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -26,7 +30,10 @@ import java.util.Locale;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+ @WithDefaultConstructor
 public class CsvWorker {
+     @Autoinjectable
+     @CollectionField(genericsParametersName = "IValidator")
     private List<IValidator> validators;
 
     /**
@@ -44,7 +51,6 @@ public class CsvWorker {
     public List<IValidator> getValidators() {
         return validators;
     }
-
     /**
      * constructor without parameters
      * fill in validators with default list validators
