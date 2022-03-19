@@ -102,6 +102,9 @@ public class Human {
         this.passport = passport;
     }
 
+    public Human() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

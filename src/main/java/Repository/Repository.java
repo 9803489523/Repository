@@ -1,11 +1,15 @@
 package Repository;
 
 import Contracts.Contract;
+import Contracts.DigitalTV;
+import Contracts.MobileConnection;
+import Contracts.WiredInternet;
 import Sorts.BubbleSorter;
 import Sorts.ISorter;
 import ReflectionResources.Autoinjectable;
 import ReflectionResources.WithDefaultConstructor;
 
+import javax.xml.bind.annotation.*;
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -16,19 +20,42 @@ import java.util.function.Predicate;
  * @version 4.0.0
  */
 @WithDefaultConstructor
+@XmlRootElement(name="repository")
+@XmlType(propOrder = {"contracts","size"})
+@XmlSeeAlso({WiredInternet.class, DigitalTV.class, MobileConnection.class})
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Repository<T extends Contract>{
     /**
      *generic array field to store, add and delete contracts
      */
+    @XmlElement(name="contract")
     private Contract[] contracts;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Repository<?> that = (Repository<?>) o;
+        return size == that.size && Arrays.equals(contracts, that.contracts) && Objects.equals(sorter, that.sorter);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(size, sorter);
+        result = 31 * result + Arrays.hashCode(contracts);
+        return result;
+    }
+
     /**
      * size of generic array field
      */
+    @XmlElement
     private int size;
 
     /**
      * repositories sorter
      */
+    @XmlTransient
     @Autoinjectable(defaultField = "ShellSorter")
     private ISorter<T> sorter=new BubbleSorter<>();
 
@@ -216,31 +243,25 @@ public class Repository<T extends Contract>{
     }
 
     /**
-     *equals
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Repository<?> that = (Repository<?>) o;
-        return size == that.size && Arrays.equals(contracts, that.contracts) && sorter.getClass().equals(that.sorter.getClass());
-    }
-
-    /**
-     * hashcode
-     */
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(size, sorter);
-        result = 31 * result + Arrays.hashCode(contracts);
-        return result;
-    }
-
-    /**
      * method, which sorts repository by comparator
      * @param comparator is criteria to sort repository
      */
     public void sort(Comparator<T> comparator){
         sorter.sort(comparator,this);
+    }
+
+    /**
+     * getter of contract array
+     * @return contract array
+     */
+    public Contract[] getContracts() {
+        return contracts;
+    }
+
+    /**
+     * setter of contract array
+     */
+    public void setContracts(Contract[] contracts) {
+        this.contracts = contracts;
     }
 }

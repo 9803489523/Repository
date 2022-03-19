@@ -1,6 +1,8 @@
 package Contracts;
 
 import PeoplesInformation.Human;
+
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 /**
@@ -10,11 +12,31 @@ import java.util.Objects;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+@XmlRootElement(name = "WiredInternet")
+@XmlType(propOrder = {"connectionSpeed"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class WiredInternet extends Contract{
     /**
      * connection speed in contract field
      */
+    @XmlElement
     private int connectionSpeed;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        WiredInternet that = (WiredInternet) o;
+        return connectionSpeed == that.connectionSpeed;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), connectionSpeed);
+    }
+
+    public WiredInternet(){}
 
     public WiredInternet(int id, int startYear, int startMonth, int startDay,
                          int endYear, int endMonth, int endDay,
@@ -30,20 +52,6 @@ public class WiredInternet extends Contract{
 
     public void setConnectionSpeed(int connectionSpeed) {
         this.connectionSpeed = connectionSpeed;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        WiredInternet that = (WiredInternet) o;
-        return connectionSpeed == that.connectionSpeed;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), connectionSpeed);
     }
 
     @Override

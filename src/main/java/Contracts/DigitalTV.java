@@ -1,6 +1,8 @@
 package Contracts;
 
 import PeoplesInformation.Human;
+
+import javax.xml.bind.annotation.*;
 import java.util.List;
 import java.util.Objects;
 /**
@@ -10,10 +12,15 @@ import java.util.Objects;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+
+@XmlRootElement(name = "DigitalTV")
+@XmlType(propOrder = {"channels"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DigitalTV extends Contract{
     /**
      * list of digital tv channels field
      */
+    @XmlElement
     private List<String> channels;
 
     public DigitalTV(int id, int startYear,int startMonth, int startDay,
@@ -23,7 +30,7 @@ public class DigitalTV extends Contract{
         super(id, startYear,startMonth, startDay, endYear, endMonth, endDay, numberOfContract, owner);
         this.channels = channels;
     }
-
+    public DigitalTV(){}
     public List<String> getChannels() {
         return channels;
     }
@@ -33,23 +40,22 @@ public class DigitalTV extends Contract{
     }
 
     @Override
+    public String toString() {
+        return String.format("%s\nсписок каналов: %s}\n",super.toString(),channels);
+    }
+
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         DigitalTV digitalTV = (DigitalTV) o;
-        return channels.equals(digitalTV.channels);
+        return Objects.equals(channels, digitalTV.channels);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), channels);
     }
-
-    @Override
-    public String toString() {
-        return String.format("%s\nсписок каналов: %s}\n",super.toString(),channels);
-    }
-
-
 }

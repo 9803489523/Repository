@@ -1,6 +1,8 @@
 package Contracts;
 
 import PeoplesInformation.Human;
+
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 /**
@@ -10,21 +12,43 @@ import java.util.Objects;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
+
+@XmlRootElement(name = "MobileConnection")
+@XmlType(propOrder = {"numberOfMinutes","numberOfSMS","internetTraffic"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class MobileConnection extends Contract{
     /**
      * this field store info about number of minutes in contract
      */
+    @XmlElement
     private int numberOfMinutes;
     /**
      * this field store info about number of SMS in contract
      */
+    @XmlElement
     private int numberOfSMS;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        MobileConnection that = (MobileConnection) o;
+        return numberOfMinutes == that.numberOfMinutes && numberOfSMS == that.numberOfSMS && internetTraffic == that.internetTraffic;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), numberOfMinutes, numberOfSMS, internetTraffic);
+    }
+
     /**
      * this field store info about number of gigabytes of internet in contract
      */
+    @XmlElement
     private int internetTraffic;
 
-
+    public MobileConnection(){}
     public MobileConnection(int id, int startYear, int startMonth,
                             int startDay, int endYear, int endMonth, int endDay,
                             long numberOfContract, Human owner, int numberOfMinutes,
@@ -58,20 +82,6 @@ public class MobileConnection extends Contract{
 
     public void setInternetTraffic(int internetTraffic) {
         this.internetTraffic = internetTraffic;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        MobileConnection that = (MobileConnection) o;
-        return numberOfMinutes == that.numberOfMinutes && numberOfSMS == that.numberOfSMS && internetTraffic == that.internetTraffic;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), numberOfMinutes, numberOfSMS, internetTraffic);
     }
 
     @Override
