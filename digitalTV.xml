@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<repository>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>6</id>
+        <startContract>2019-11-22</startContract>
+        <endContract>2020-11-22</endContract>
+        <numberOfContract>1202120</numberOfContract>
+        <owner>
+            <id>2</id>
+            <fio>Крикунов Денис Денисович</fio>
+            <bornDate>2002-04-19</bornDate>
+            <passport>2014 125 127</passport>
+            <age>19</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>5</id>
+        <startContract>2020-10-11</startContract>
+        <endContract>2021-03-09</endContract>
+        <numberOfContract>1202121</numberOfContract>
+        <owner>
+            <id>3</id>
+            <fio>Соболев Илья Алексеевич</fio>
+            <bornDate>1999-08-10</bornDate>
+            <passport>2014 200045</passport>
+            <age>22</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>3</id>
+        <startContract>2018-02-19</startContract>
+        <endContract>2020-07-25</endContract>
+        <numberOfContract>1202122</numberOfContract>
+        <owner>
+            <id>4</id>
+            <fio>Елизаров Михаил Юрьевич</fio>
+            <bornDate>2002-04-09</bornDate>
+            <passport>2015 325 789</passport>
+            <age>19</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>9</id>
+        <startContract>2019-05-10</startContract>
+        <endContract>2020-06-11</endContract>
+        <numberOfContract>1202123</numberOfContract>
+        <owner>
+            <id>5</id>
+            <fio>Харитонов Алексей Денисович</fio>
+            <bornDate>1987-03-05</bornDate>
+            <passport>2015 111007</passport>
+            <age>35</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>2</id>
+        <startContract>2017-04-02</startContract>
+        <endContract>2018-02-08</endContract>
+        <numberOfContract>1202124</numberOfContract>
+        <owner>
+            <id>6</id>
+            <fio>Данилов Юрий Максимович</fio>
+            <bornDate>2001-09-01</bornDate>
+            <passport>2015 322 147</passport>
+            <age>20</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>1</id>
+        <startContract>2018-01-18</startContract>
+        <endContract>2019-10-06</endContract>
+        <numberOfContract>1202125</numberOfContract>
+        <owner>
+            <id>7</id>
+            <fio>Горбачев Николай Артемович</fio>
+            <bornDate>2000-07-21</bornDate>
+            <passport>2015 411782</passport>
+            <age>21</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>7</id>
+        <startContract>2019-03-12</startContract>
+        <endContract>2020-12-07</endContract>
+        <numberOfContract>1202126</numberOfContract>
+        <owner>
+            <id>8</id>
+            <fio>Новиков Николай Маркович</fio>
+            <bornDate>1990-10-07</bornDate>
+            <passport>2015 899 417</passport>
+            <age>31</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>8</id>
+        <startContract>2017-07-13</startContract>
+        <endContract>2019-01-03</endContract>
+        <numberOfContract>1202127</numberOfContract>
+        <owner>
+            <id>9</id>
+            <fio>Попов Дмитрий Олегович</fio>
+            <bornDate>1994-12-06</bornDate>
+            <passport>2015 791457</passport>
+            <age>27</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>4</id>
+        <startContract>2019-12-04</startContract>
+        <endContract>2020-04-18</endContract>
+        <numberOfContract>1202128</numberOfContract>
+        <owner>
+            <id>10</id>
+            <fio>Давыдов Алексей Святославович</fio>
+            <bornDate>1997-01-20</bornDate>
+            <passport>2014 146 900</passport>
+            <age>25</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="digitalTV">
+        <id>10</id>
+        <startContract>2020-06-06</startContract>
+        <endContract>2021-08-04</endContract>
+        <numberOfContract>1202129</numberOfContract>
+        <owner>
+            <id>1</id>
+            <fio>Летов Игорь Федорович</fio>
+            <bornDate>2000-11-12</bornDate>
+            <passport>2011 200359</passport>
+            <age>21</age>
+        </owner>
+        <channels>CTC</channels>
+        <channels>Россия 1</channels>
+        <channels>НТВ</channels>
+        <channels>5 канал</channels>
+        <channels>МАТЧ ТВ</channels>
+        <channels>1 канал</channels>
+        <channels>МАТЧ Премьер</channels>
+    </contract>
+    <size>10</size>
+</repository>

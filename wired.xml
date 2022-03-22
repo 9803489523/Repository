@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<repository>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>25</id>
+        <startContract>2019-01-22</startContract>
+        <endContract>2020-12-20</endContract>
+        <numberOfContract>9006770</numberOfContract>
+        <owner>
+            <id>2</id>
+            <fio>Крикунов Денис Денисович</fio>
+            <bornDate>2002-04-19</bornDate>
+            <passport>2014 125 127</passport>
+            <age>19</age>
+        </owner>
+        <connectionSpeed>75</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>21</id>
+        <startContract>2014-02-16</startContract>
+        <endContract>2021-08-02</endContract>
+        <numberOfContract>9006771</numberOfContract>
+        <owner>
+            <id>3</id>
+            <fio>Соболев Илья Алексеевич</fio>
+            <bornDate>1999-08-10</bornDate>
+            <passport>2014 200045</passport>
+            <age>22</age>
+        </owner>
+        <connectionSpeed>125</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>22</id>
+        <startContract>2012-10-08</startContract>
+        <endContract>2019-04-23</endContract>
+        <numberOfContract>9006772</numberOfContract>
+        <owner>
+            <id>4</id>
+            <fio>Елизаров Михаил Юрьевич</fio>
+            <bornDate>2002-04-09</bornDate>
+            <passport>2015 325 789</passport>
+            <age>19</age>
+        </owner>
+        <connectionSpeed>200</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>28</id>
+        <startContract>2018-08-27</startContract>
+        <endContract>2020-05-05</endContract>
+        <numberOfContract>9006773</numberOfContract>
+        <owner>
+            <id>5</id>
+            <fio>Харитонов Алексей Денисович</fio>
+            <bornDate>1987-03-05</bornDate>
+            <passport>2015 111007</passport>
+            <age>35</age>
+        </owner>
+        <connectionSpeed>50</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>24</id>
+        <startContract>2016-07-11</startContract>
+        <endContract>2021-06-01</endContract>
+        <numberOfContract>9006774</numberOfContract>
+        <owner>
+            <id>6</id>
+            <fio>Данилов Юрий Максимович</fio>
+            <bornDate>2001-09-01</bornDate>
+            <passport>2015 322 147</passport>
+            <age>20</age>
+        </owner>
+        <connectionSpeed>175</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>20</id>
+        <startContract>2015-06-04</startContract>
+        <endContract>2018-09-16</endContract>
+        <numberOfContract>9006775</numberOfContract>
+        <owner>
+            <id>7</id>
+            <fio>Горбачев Николай Артемович</fio>
+            <bornDate>2000-07-21</bornDate>
+            <passport>2015 411782</passport>
+            <age>21</age>
+        </owner>
+        <connectionSpeed>100</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>26</id>
+        <startContract>2014-03-05</startContract>
+        <endContract>2017-07-18</endContract>
+        <numberOfContract>9006776</numberOfContract>
+        <owner>
+            <id>8</id>
+            <fio>Новиков Николай Маркович</fio>
+            <bornDate>1990-10-07</bornDate>
+            <passport>2015 899 417</passport>
+            <age>31</age>
+        </owner>
+        <connectionSpeed>80</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>27</id>
+        <startContract>2010-02-23</startContract>
+        <endContract>2015-08-14</endContract>
+        <numberOfContract>9006777</numberOfContract>
+        <owner>
+            <id>9</id>
+            <fio>Попов Дмитрий Олегович</fio>
+            <bornDate>1994-12-06</bornDate>
+            <passport>2015 791457</passport>
+            <age>27</age>
+        </owner>
+        <connectionSpeed>150</connectionSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="wiredInternet">
+        <id>23</id>
+        <startContract>2018-09-20</startContract>
+        <endContract>2021-04-03</endContract>
+        <numberOfContract>9006778</numberOfContract>
+        <owner>
+            <id>10</id>
+            <fio>Давыдов Алексей Святославович</fio>
+            <bornDate>1997-01-20</bornDate>
+            <passport>2014 146 900</passport>
+            <age>25</age>
+        </owner>
+        <connectionSpeed>90</connectionSpeed>
+    </contract>
+    <size>9</size>
+</repository>

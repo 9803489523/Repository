@@ -6,19 +6,21 @@ import Contracts.MobileConnection;
 import Contracts.WiredInternet;
 import PeoplesInformation.Human;
 import Repository.Repository;
+import org.junit.Test;
+
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] args) throws JAXBException, IOException {
-        JAXBWorker<Contract> jaxbWorker=new JAXBWorker<>();
-        JAXBWorker<WiredInternet> wiredInternetJAXBWorker=new JAXBWorker<>();
-        fillInRepository();
-        jaxbWorker.write(repository,"repo1");
-        Repository<Contract> repository12=jaxbWorker.read("repo2");
-    }
+import static org.junit.Assert.*;
+
+/**
+ * Testing JaxbWorker class
+ * @author Aleksandr Nozdryuhin
+ * @version 4.0.0
+ */
+public class JAXBWorkerTest {
     /**
      * @value this field store TV channels in String array format
      */
@@ -26,7 +28,7 @@ public class Main {
     /**
      * @value this field convert TV channels on to List<String> (It's necessary for class DigitalTv)
      */
-     static List<String> channels= Arrays.stream(channelsArray).toList();
+    static List<String> channels= Arrays.stream(channelsArray).toList();
     /**
      * @value this field store FIO of contract owners
      */
@@ -45,13 +47,13 @@ public class Main {
     /**
      * @value this field store passport data of contract owners
      */
-     static String[] passports={"2014 146 900","2011 200359","2014 125 127","2014 200045","2015 325 789","2015 111007",
+    static String[] passports={"2014 146 900","2011 200359","2014 125 127","2014 200045","2015 325 789","2015 111007",
             "2015 322 147", "2015 411782","2015 899 417","2015 791457"};
 
     /**
      * @value this field store contract owners
      */
-     static Human[] humans={
+    static Human[] humans={
             new Human(1,fio[1],2000,11,12,passports[1]),
             new Human(2,fio[2],2002,4,19,passports[2]),
             new Human(3,fio[3],1999,8,10,passports[3]),
@@ -66,7 +68,7 @@ public class Main {
     /**
      * @value this field store digital tv contracts in array format
      */
-     static DigitalTV[] digitalTVContracts={
+    static DigitalTV[] digitalTVContracts={
             new DigitalTV(6,2019,11,22,2020,11,22,1202120,humans[1],channels),
             new DigitalTV(5,2020,10,11,2021,3,9,1202121,humans[2],channels),
             new DigitalTV(3,2018,2,19,2020,7,25,1202122,humans[3],channels),
@@ -81,7 +83,7 @@ public class Main {
     /**
      * @value this field store mobile connections contracts in array format
      */
-     static MobileConnection[] mobileConnectionContracts={
+    static MobileConnection[] mobileConnectionContracts={
             new MobileConnection(11,2016,11,15,2020,11,20,5770000,humans[1],100,300,5),
             new MobileConnection(12,2014,1,14,2021,10,11,5770001,humans[2],200,500,10),
             new MobileConnection(13,2018,6,21,2019,8,1,5770002,humans[3],300,500,20),
@@ -95,7 +97,7 @@ public class Main {
     /**
      * @value this field store wired internet contracts in array format
      */
-     static WiredInternet[] wiredInternetContracts={
+    static WiredInternet[] wiredInternetContracts={
             new WiredInternet(25,2019,1,22,2020,12,20,9006770,humans[1],75),
             new WiredInternet(21,2014,2,16,2021,8,2,9006771,humans[2],125),
             new WiredInternet(22,2012,10,8,2019,4,23,9006772,humans[3],200),
@@ -109,19 +111,19 @@ public class Main {
     /**
      * @value this field store all contracts in Repository format
      */
-     static Repository<Contract> repository= new Repository<>();
+    static Repository<Contract> repository= new Repository<>();
     /**
      * @value this field store digital tv contracts in Repository format
      */
-     static Repository<DigitalTV> digitalTVRepository=new Repository<DigitalTV>();
+    static Repository<DigitalTV> digitalTVRepository=new Repository<DigitalTV>();
     /**
      * @value this field store mobile connection contracts in Repository format
      */
-     static Repository<MobileConnection> mobileConnectionRepository=new Repository<MobileConnection>();
+    static Repository<MobileConnection> mobileConnectionRepository=new Repository<MobileConnection>();
     /**
      * @value this field store wired internet contracts in Repository format
      */
-     static Repository<WiredInternet> wiredInternetRepository=new Repository<WiredInternet>();
+    static Repository<WiredInternet> wiredInternetRepository=new Repository<WiredInternet>();
     /**
      * this method fill in repository of all contracts
      */
@@ -161,4 +163,43 @@ public class Main {
             mobileConnectionRepository.add(mobileConnectionContract);
         }
     }
+
+    /**
+     * method to compare two Repository
+     */
+    public <T extends Contract>void checkingTwoRepo(Repository<T> first, Repository<T> second){
+        assertEquals(first.getSize(),second.getSize());
+        for(int i=0;i<first.getSize();i++){
+            assertEquals(first.get(i),second.get(i));
+        }
+    }
+
+    /**
+     * testing 2 methods: write and read
+     */
+    @Test
+    public void writeAndRead() throws JAXBException, IOException {
+        JAXBWorker<Contract> jaxbWorker=new JAXBWorker<>();
+        JAXBWorker<DigitalTV> digitalTVJAXBWorker=new JAXBWorker<>();
+        JAXBWorker<MobileConnection> mobileConnectionJAXBWorker=new JAXBWorker<>();
+        JAXBWorker<WiredInternet> wiredInternetJAXBWorker=new JAXBWorker<>();
+        fillInRepository();
+        fillInDigitalTV();
+        fillInMobileConnection();
+        fillInWiredInternet();
+        jaxbWorker.write(repository,"contract");
+        digitalTVJAXBWorker.write(digitalTVRepository,"digitalTV");
+        mobileConnectionJAXBWorker.write(mobileConnectionRepository,"mobile");
+        wiredInternetJAXBWorker.write(wiredInternetRepository,"wired");
+        Repository<Contract> repoContract=jaxbWorker.read("contract");
+        Repository<DigitalTV> repoDigital=digitalTVJAXBWorker.read("digitalTV");
+        Repository<MobileConnection> repoMobile=mobileConnectionJAXBWorker.read("mobile");
+        Repository<WiredInternet> repoWired=wiredInternetJAXBWorker.read("wired");
+        checkingTwoRepo(repoContract,repository);
+        checkingTwoRepo(digitalTVRepository,repoDigital);
+        checkingTwoRepo(mobileConnectionRepository,repoMobile);
+        checkingTwoRepo(wiredInternetRepository,repoWired);
+    }
+
+
 }

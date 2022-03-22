@@ -6,11 +6,11 @@
         <endContract>2020-11-22</endContract>
         <numberOfContract>1202120</numberOfContract>
         <owner>
-            <age>19</age>
-            <bornDate/>
-            <fio>Крикунов Денис Денисович</fio>
             <id>2</id>
+            <fio>Крикунов Денис Денисович</fio>
+            <bornDate>2002-04-19</bornDate>
             <passport>2014 125 127</passport>
+            <age>19</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -26,11 +26,11 @@
         <endContract>2021-03-09</endContract>
         <numberOfContract>1202121</numberOfContract>
         <owner>
-            <age>22</age>
-            <bornDate/>
-            <fio>Соболев Илья Алексеевич</fio>
             <id>3</id>
+            <fio>Соболев Илья Алексеевич</fio>
+            <bornDate>1999-08-10</bornDate>
             <passport>2014 200045</passport>
+            <age>22</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -46,11 +46,11 @@
         <endContract>2020-11-20</endContract>
         <numberOfContract>5770000</numberOfContract>
         <owner>
-            <age>19</age>
-            <bornDate/>
-            <fio>Крикунов Денис Денисович</fio>
             <id>2</id>
+            <fio>Крикунов Денис Денисович</fio>
+            <bornDate>2002-04-19</bornDate>
             <passport>2014 125 127</passport>
+            <age>19</age>
         </owner>
         <numberOfMinutes>100</numberOfMinutes>
         <numberOfSMS>300</numberOfSMS>
@@ -62,11 +62,11 @@
         <endContract>2020-12-20</endContract>
         <numberOfContract>9006770</numberOfContract>
         <owner>
-            <age>19</age>
-            <bornDate/>
-            <fio>Крикунов Денис Денисович</fio>
             <id>2</id>
+            <fio>Крикунов Денис Денисович</fio>
+            <bornDate>2002-04-19</bornDate>
             <passport>2014 125 127</passport>
+            <age>19</age>
         </owner>
         <connectionSpeed>75</connectionSpeed>
     </contract>
@@ -76,11 +76,11 @@
         <endContract>2020-07-25</endContract>
         <numberOfContract>1202122</numberOfContract>
         <owner>
-            <age>19</age>
-            <bornDate/>
-            <fio>Елизаров Михаил Юрьевич</fio>
             <id>4</id>
+            <fio>Елизаров Михаил Юрьевич</fio>
+            <bornDate>2002-04-09</bornDate>
             <passport>2015 325 789</passport>
+            <age>19</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -96,11 +96,11 @@
         <endContract>2021-10-11</endContract>
         <numberOfContract>5770001</numberOfContract>
         <owner>
-            <age>22</age>
-            <bornDate/>
-            <fio>Соболев Илья Алексеевич</fio>
             <id>3</id>
+            <fio>Соболев Илья Алексеевич</fio>
+            <bornDate>1999-08-10</bornDate>
             <passport>2014 200045</passport>
+            <age>22</age>
         </owner>
         <numberOfMinutes>200</numberOfMinutes>
         <numberOfSMS>500</numberOfSMS>
@@ -112,11 +112,11 @@
         <endContract>2021-08-02</endContract>
         <numberOfContract>9006771</numberOfContract>
         <owner>
-            <age>22</age>
-            <bornDate/>
-            <fio>Соболев Илья Алексеевич</fio>
             <id>3</id>
+            <fio>Соболев Илья Алексеевич</fio>
+            <bornDate>1999-08-10</bornDate>
             <passport>2014 200045</passport>
+            <age>22</age>
         </owner>
         <connectionSpeed>125</connectionSpeed>
     </contract>
@@ -126,11 +126,11 @@
         <endContract>2020-06-11</endContract>
         <numberOfContract>1202123</numberOfContract>
         <owner>
-            <age>35</age>
-            <bornDate/>
-            <fio>Харитонов Алексей Денисович</fio>
             <id>5</id>
+            <fio>Харитонов Алексей Денисович</fio>
+            <bornDate>1987-03-05</bornDate>
             <passport>2015 111007</passport>
+            <age>35</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -146,11 +146,11 @@
         <endContract>2019-08-01</endContract>
         <numberOfContract>5770002</numberOfContract>
         <owner>
-            <age>19</age>
-            <bornDate/>
-            <fio>Елизаров Михаил Юрьевич</fio>
             <id>4</id>
+            <fio>Елизаров Михаил Юрьевич</fio>
+            <bornDate>2002-04-09</bornDate>
             <passport>2015 325 789</passport>
+            <age>19</age>
         </owner>
         <numberOfMinutes>300</numberOfMinutes>
         <numberOfSMS>500</numberOfSMS>
@@ -162,11 +162,11 @@
         <endContract>2019-04-23</endContract>
         <numberOfContract>9006772</numberOfContract>
         <owner>
-            <age>19</age>
-            <bornDate/>
-            <fio>Елизаров Михаил Юрьевич</fio>
             <id>4</id>
+            <fio>Елизаров Михаил Юрьевич</fio>
+            <bornDate>2002-04-09</bornDate>
             <passport>2015 325 789</passport>
+            <age>19</age>
         </owner>
         <connectionSpeed>200</connectionSpeed>
     </contract>
@@ -176,11 +176,11 @@
         <endContract>2018-02-08</endContract>
         <numberOfContract>1202124</numberOfContract>
         <owner>
-            <age>20</age>
-            <bornDate/>
-            <fio>Данилов Юрий Максимович</fio>
             <id>6</id>
+            <fio>Данилов Юрий Максимович</fio>
+            <bornDate>2001-09-01</bornDate>
             <passport>2015 322 147</passport>
+            <age>20</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -196,11 +196,11 @@
         <endContract>2019-04-26</endContract>
         <numberOfContract>5770003</numberOfContract>
         <owner>
-            <age>35</age>
-            <bornDate/>
-            <fio>Харитонов Алексей Денисович</fio>
             <id>5</id>
+            <fio>Харитонов Алексей Денисович</fio>
+            <bornDate>1987-03-05</bornDate>
             <passport>2015 111007</passport>
+            <age>35</age>
         </owner>
         <numberOfMinutes>500</numberOfMinutes>
         <numberOfSMS>400</numberOfSMS>
@@ -212,11 +212,11 @@
         <endContract>2020-05-05</endContract>
         <numberOfContract>9006773</numberOfContract>
         <owner>
-            <age>35</age>
-            <bornDate/>
-            <fio>Харитонов Алексей Денисович</fio>
             <id>5</id>
+            <fio>Харитонов Алексей Денисович</fio>
+            <bornDate>1987-03-05</bornDate>
             <passport>2015 111007</passport>
+            <age>35</age>
         </owner>
         <connectionSpeed>50</connectionSpeed>
     </contract>
@@ -226,11 +226,11 @@
         <endContract>2019-10-06</endContract>
         <numberOfContract>1202125</numberOfContract>
         <owner>
-            <age>21</age>
-            <bornDate/>
-            <fio>Горбачев Николай Артемович</fio>
             <id>7</id>
+            <fio>Горбачев Николай Артемович</fio>
+            <bornDate>2000-07-21</bornDate>
             <passport>2015 411782</passport>
+            <age>21</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -246,11 +246,11 @@
         <endContract>2020-02-14</endContract>
         <numberOfContract>5770004</numberOfContract>
         <owner>
-            <age>20</age>
-            <bornDate/>
-            <fio>Данилов Юрий Максимович</fio>
             <id>6</id>
+            <fio>Данилов Юрий Максимович</fio>
+            <bornDate>2001-09-01</bornDate>
             <passport>2015 322 147</passport>
+            <age>20</age>
         </owner>
         <numberOfMinutes>900</numberOfMinutes>
         <numberOfSMS>800</numberOfSMS>
@@ -262,11 +262,11 @@
         <endContract>2021-06-01</endContract>
         <numberOfContract>9006774</numberOfContract>
         <owner>
-            <age>20</age>
-            <bornDate/>
-            <fio>Данилов Юрий Максимович</fio>
             <id>6</id>
+            <fio>Данилов Юрий Максимович</fio>
+            <bornDate>2001-09-01</bornDate>
             <passport>2015 322 147</passport>
+            <age>20</age>
         </owner>
         <connectionSpeed>175</connectionSpeed>
     </contract>
@@ -276,11 +276,11 @@
         <endContract>2020-12-07</endContract>
         <numberOfContract>1202126</numberOfContract>
         <owner>
-            <age>31</age>
-            <bornDate/>
-            <fio>Новиков Николай Маркович</fio>
             <id>8</id>
+            <fio>Новиков Николай Маркович</fio>
+            <bornDate>1990-10-07</bornDate>
             <passport>2015 899 417</passport>
+            <age>31</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -296,11 +296,11 @@
         <endContract>2020-09-12</endContract>
         <numberOfContract>5770005</numberOfContract>
         <owner>
-            <age>21</age>
-            <bornDate/>
-            <fio>Горбачев Николай Артемович</fio>
             <id>7</id>
+            <fio>Горбачев Николай Артемович</fio>
+            <bornDate>2000-07-21</bornDate>
             <passport>2015 411782</passport>
+            <age>21</age>
         </owner>
         <numberOfMinutes>100</numberOfMinutes>
         <numberOfSMS>1000</numberOfSMS>
@@ -312,11 +312,11 @@
         <endContract>2018-09-16</endContract>
         <numberOfContract>9006775</numberOfContract>
         <owner>
-            <age>21</age>
-            <bornDate/>
-            <fio>Горбачев Николай Артемович</fio>
             <id>7</id>
+            <fio>Горбачев Николай Артемович</fio>
+            <bornDate>2000-07-21</bornDate>
             <passport>2015 411782</passport>
+            <age>21</age>
         </owner>
         <connectionSpeed>100</connectionSpeed>
     </contract>
@@ -326,11 +326,11 @@
         <endContract>2019-01-03</endContract>
         <numberOfContract>1202127</numberOfContract>
         <owner>
-            <age>27</age>
-            <bornDate/>
-            <fio>Попов Дмитрий Олегович</fio>
             <id>9</id>
+            <fio>Попов Дмитрий Олегович</fio>
+            <bornDate>1994-12-06</bornDate>
             <passport>2015 791457</passport>
+            <age>27</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -346,11 +346,11 @@
         <endContract>2021-01-15</endContract>
         <numberOfContract>5770006</numberOfContract>
         <owner>
-            <age>21</age>
-            <bornDate/>
-            <fio>Летов Игорь Федорович</fio>
             <id>1</id>
+            <fio>Летов Игорь Федорович</fio>
+            <bornDate>2000-11-12</bornDate>
             <passport>2011 200359</passport>
+            <age>21</age>
         </owner>
         <numberOfMinutes>800</numberOfMinutes>
         <numberOfSMS>200</numberOfSMS>
@@ -362,11 +362,11 @@
         <endContract>2017-07-18</endContract>
         <numberOfContract>9006776</numberOfContract>
         <owner>
-            <age>31</age>
-            <bornDate/>
-            <fio>Новиков Николай Маркович</fio>
             <id>8</id>
+            <fio>Новиков Николай Маркович</fio>
+            <bornDate>1990-10-07</bornDate>
             <passport>2015 899 417</passport>
+            <age>31</age>
         </owner>
         <connectionSpeed>80</connectionSpeed>
     </contract>
@@ -376,11 +376,11 @@
         <endContract>2020-04-18</endContract>
         <numberOfContract>1202128</numberOfContract>
         <owner>
-            <age>25</age>
-            <bornDate/>
-            <fio>Давыдов Алексей Святославович</fio>
             <id>10</id>
+            <fio>Давыдов Алексей Святославович</fio>
+            <bornDate>1997-01-20</bornDate>
             <passport>2014 146 900</passport>
+            <age>25</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -396,11 +396,11 @@
         <endContract>2018-03-18</endContract>
         <numberOfContract>5770007</numberOfContract>
         <owner>
-            <age>27</age>
-            <bornDate/>
-            <fio>Попов Дмитрий Олегович</fio>
             <id>9</id>
+            <fio>Попов Дмитрий Олегович</fio>
+            <bornDate>1994-12-06</bornDate>
             <passport>2015 791457</passport>
+            <age>27</age>
         </owner>
         <numberOfMinutes>200</numberOfMinutes>
         <numberOfSMS>100</numberOfSMS>
@@ -412,11 +412,11 @@
         <endContract>2015-08-14</endContract>
         <numberOfContract>9006777</numberOfContract>
         <owner>
-            <age>27</age>
-            <bornDate/>
-            <fio>Попов Дмитрий Олегович</fio>
             <id>9</id>
+            <fio>Попов Дмитрий Олегович</fio>
+            <bornDate>1994-12-06</bornDate>
             <passport>2015 791457</passport>
+            <age>27</age>
         </owner>
         <connectionSpeed>150</connectionSpeed>
     </contract>
@@ -426,11 +426,11 @@
         <endContract>2021-08-04</endContract>
         <numberOfContract>1202129</numberOfContract>
         <owner>
-            <age>21</age>
-            <bornDate/>
-            <fio>Летов Игорь Федорович</fio>
             <id>1</id>
+            <fio>Летов Игорь Федорович</fio>
+            <bornDate>2000-11-12</bornDate>
             <passport>2011 200359</passport>
+            <age>21</age>
         </owner>
         <channels>CTC</channels>
         <channels>Россия 1</channels>
@@ -446,11 +446,11 @@
         <endContract>2021-05-02</endContract>
         <numberOfContract>5770008</numberOfContract>
         <owner>
-            <age>31</age>
-            <bornDate/>
-            <fio>Новиков Николай Маркович</fio>
             <id>8</id>
+            <fio>Новиков Николай Маркович</fio>
+            <bornDate>1990-10-07</bornDate>
             <passport>2015 899 417</passport>
+            <age>31</age>
         </owner>
         <numberOfMinutes>300</numberOfMinutes>
         <numberOfSMS>300</numberOfSMS>
@@ -462,11 +462,11 @@
         <endContract>2021-04-03</endContract>
         <numberOfContract>9006778</numberOfContract>
         <owner>
-            <age>25</age>
-            <bornDate/>
-            <fio>Давыдов Алексей Святославович</fio>
             <id>10</id>
+            <fio>Давыдов Алексей Святославович</fio>
+            <bornDate>1997-01-20</bornDate>
             <passport>2014 146 900</passport>
+            <age>25</age>
         </owner>
         <connectionSpeed>90</connectionSpeed>
     </contract>

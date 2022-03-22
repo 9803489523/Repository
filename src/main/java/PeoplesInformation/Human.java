@@ -1,5 +1,12 @@
 package PeoplesInformation;
 
+import Contracts.DigitalTV;
+import Contracts.MobileConnection;
+import Contracts.WiredInternet;
+import JAXB.DateAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.util.Objects;
 /**
@@ -9,28 +16,36 @@ import java.util.Objects;
  * @author Aleksandr Nozdryuhin
  * @version 4.0.0
  */
-
+@XmlRootElement(name = "owner")
+@XmlType(propOrder = {"id","fio", "bornDate","passport","age"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Human {
     /**
      * field of id human
      */
+    @XmlElement
     private int id;
     /**
      * field of human full name
      */
+    @XmlElement
     private String fio;
     /**
      * field of born date human
      */
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private LocalDate bornDate;
     /**
      * field of human passport
      */
+    @XmlElement
     private String passport;
     /**
      * field of human age
      * this field count in method {@link Human#ageComputation()}
      */
+    @XmlElement
     private int age;
 
     public Human(int id, String fio, int bornYear,int bornMonth,

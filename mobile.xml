@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<repository>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>11</id>
+        <startContract>2016-11-15</startContract>
+        <endContract>2020-11-20</endContract>
+        <numberOfContract>5770000</numberOfContract>
+        <owner>
+            <id>2</id>
+            <fio>Крикунов Денис Денисович</fio>
+            <bornDate>2002-04-19</bornDate>
+            <passport>2014 125 127</passport>
+            <age>19</age>
+        </owner>
+        <numberOfMinutes>100</numberOfMinutes>
+        <numberOfSMS>300</numberOfSMS>
+        <internetTraffic>5</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>12</id>
+        <startContract>2014-01-14</startContract>
+        <endContract>2021-10-11</endContract>
+        <numberOfContract>5770001</numberOfContract>
+        <owner>
+            <id>3</id>
+            <fio>Соболев Илья Алексеевич</fio>
+            <bornDate>1999-08-10</bornDate>
+            <passport>2014 200045</passport>
+            <age>22</age>
+        </owner>
+        <numberOfMinutes>200</numberOfMinutes>
+        <numberOfSMS>500</numberOfSMS>
+        <internetTraffic>10</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>13</id>
+        <startContract>2018-06-21</startContract>
+        <endContract>2019-08-01</endContract>
+        <numberOfContract>5770002</numberOfContract>
+        <owner>
+            <id>4</id>
+            <fio>Елизаров Михаил Юрьевич</fio>
+            <bornDate>2002-04-09</bornDate>
+            <passport>2015 325 789</passport>
+            <age>19</age>
+        </owner>
+        <numberOfMinutes>300</numberOfMinutes>
+        <numberOfSMS>500</numberOfSMS>
+        <internetTraffic>20</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>14</id>
+        <startContract>2017-08-25</startContract>
+        <endContract>2019-04-26</endContract>
+        <numberOfContract>5770003</numberOfContract>
+        <owner>
+            <id>5</id>
+            <fio>Харитонов Алексей Денисович</fio>
+            <bornDate>1987-03-05</bornDate>
+            <passport>2015 111007</passport>
+            <age>35</age>
+        </owner>
+        <numberOfMinutes>500</numberOfMinutes>
+        <numberOfSMS>400</numberOfSMS>
+        <internetTraffic>10</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>15</id>
+        <startContract>2019-10-27</startContract>
+        <endContract>2020-02-14</endContract>
+        <numberOfContract>5770004</numberOfContract>
+        <owner>
+            <id>6</id>
+            <fio>Данилов Юрий Максимович</fio>
+            <bornDate>2001-09-01</bornDate>
+            <passport>2015 322 147</passport>
+            <age>20</age>
+        </owner>
+        <numberOfMinutes>900</numberOfMinutes>
+        <numberOfSMS>800</numberOfSMS>
+        <internetTraffic>15</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>16</id>
+        <startContract>2019-12-24</startContract>
+        <endContract>2020-09-12</endContract>
+        <numberOfContract>5770005</numberOfContract>
+        <owner>
+            <id>7</id>
+            <fio>Горбачев Николай Артемович</fio>
+            <bornDate>2000-07-21</bornDate>
+            <passport>2015 411782</passport>
+            <age>21</age>
+        </owner>
+        <numberOfMinutes>100</numberOfMinutes>
+        <numberOfSMS>1000</numberOfSMS>
+        <internetTraffic>30</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>17</id>
+        <startContract>2020-04-12</startContract>
+        <endContract>2021-01-15</endContract>
+        <numberOfContract>5770006</numberOfContract>
+        <owner>
+            <id>1</id>
+            <fio>Летов Игорь Федорович</fio>
+            <bornDate>2000-11-12</bornDate>
+            <passport>2011 200359</passport>
+            <age>21</age>
+        </owner>
+        <numberOfMinutes>800</numberOfMinutes>
+        <numberOfSMS>200</numberOfSMS>
+        <internetTraffic>10</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>18</id>
+        <startContract>2015-03-08</startContract>
+        <endContract>2018-03-18</endContract>
+        <numberOfContract>5770007</numberOfContract>
+        <owner>
+            <id>9</id>
+            <fio>Попов Дмитрий Олегович</fio>
+            <bornDate>1994-12-06</bornDate>
+            <passport>2015 791457</passport>
+            <age>27</age>
+        </owner>
+        <numberOfMinutes>200</numberOfMinutes>
+        <numberOfSMS>100</numberOfSMS>
+        <internetTraffic>11</internetTraffic>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="mobileConnection">
+        <id>19</id>
+        <startContract>2019-02-06</startContract>
+        <endContract>2021-05-02</endContract>
+        <numberOfContract>5770008</numberOfContract>
+        <owner>
+            <id>8</id>
+            <fio>Новиков Николай Маркович</fio>
+            <bornDate>1990-10-07</bornDate>
+            <passport>2015 899 417</passport>
+            <age>31</age>
+        </owner>
+        <numberOfMinutes>300</numberOfMinutes>
+        <numberOfSMS>300</numberOfSMS>
+        <internetTraffic>18</internetTraffic>
+    </contract>
+    <size>9</size>
+</repository>
